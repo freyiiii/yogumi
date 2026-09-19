@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yogumi</title>
+
+    <!-- Animated Pawing Peach Cat Cursor -->
+    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/pawing-cat-0e49294c-32.css">
+
+    <style>
+
+        /* =========================
+           EASY FONT CHANGE
+           ========================= */
+
+        :root {
+            --cream: #FFFAEB;
+            --yellow: #FECB0E;
+            --brown: #5A3628;
+
+            --main-font: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--brown);
+            font-family: var(--main-font);
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            background-color: var(--yellow);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--brown);
+            text-decoration: none;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            background-color: var(--cream);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            padding: 100px 7% 60px;
+        }
+
+
+        /* =========================
+           YOGUMI LOGO
+           ========================= */
+
+        .hero-logo {
+            position: absolute;
+
+            top: 100px;
+            right: 7%;
+
+            width: 220px;
+            height: 220px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: transparent;
+
+            border: none;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            border-radius: 50%;
+        }
+
+
+        /* =========================
+           HERO CONTENT
+           ========================= */
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(60px, 12vw, 150px);
+
+            line-height: 0.9;
+
+            font-weight: 900;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           ORDER BUTTON
+           ========================= */
+
+        .order-button {
+            display: inline-block;
+
+            background-color: var(--yellow);
+            color: var(--brown);
+
+            padding: 16px 35px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: 900;
+
+            border: 3px solid var(--brown);
+
+            box-shadow: 6px 6px 0 var(--brown);
+
+            transition: all 0.2s ease;
+        }
+
+        .order-button:hover {
+            transform: translate(3px, 3px);
+
+            box-shadow: 3px 3px 0 var(--brown);
+        }
+
+
+        /* =========================
+           ABOUT
+           ========================= */
+
+        .intro {
+            min-height: 300px;
+
+            background-color: var(--yellow);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 10%;
+        }
+
+        .intro-content {
+            max-width: 700px;
+        }
+
+        .intro h2 {
+            font-size: 40px;
+
+            margin-bottom: 20px;
+
+            font-weight: 900;
+        }
+
+        .intro p {
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CHEESECAKE SECTION
+           ========================= */
+
+        .thumbnails {
+            min-height: 500px;
+
+            background-color: var(--cream);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 45px;
+
+            padding: 80px 7%;
+        }
+
+
+        /* =========================
+           CLICKABLE THUMBNAILS
+           ========================= */
+
+        .thumbnail {
+            position: relative;
+
+            width: 330px;
+            height: 330px;
+
+            overflow: hidden;
+
+            border: 4px solid var(--brown);
+
+            background-color: white;
+
+            text-decoration: none;
+
+            color: var(--brown);
+
+            display: block;
+
+            transition: transform 0.2s ease;
+        }
+
+        .thumbnail:hover {
+            transform: translateY(-5px);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           THUMBNAIL OVERLAY
+           ========================= */
+
+        .thumbnail-overlay {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+
+            background-color: var(--yellow);
+
+            padding: 15px;
+
+            text-align: center;
+
+            border-top: 3px solid var(--brown);
+        }
+
+        .thumbnail-overlay span {
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           PAW CLICK ANIMATION
+           ========================= */
+
+        .paw-click {
+            position: fixed;
+
+            pointer-events: none;
+
+            z-index: 9999;
+
+            font-size: 45px;
+
+            transform: translate(-50%, -50%) scale(0.5);
+
+            opacity: 0;
+
+            animation: pawClick 0.5s ease-out forwards;
+        }
+
+        @keyframes pawClick {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.5)
+                    rotate(-15deg);
+            }
+
+            30% {
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15)
+                    rotate(5deg);
+            }
+
+            60% {
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.95)
+                    rotate(-5deg);
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.3)
+                    rotate(10deg);
+            }
+
+        }
+
+
+        /* =========================
+           MIMI / CAT MASCOT
+           ========================= */
+
+        .mimi-container {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           MIMI NAME
+           ========================= */
+
+        .mimi-name {
+            background-color: var(--yellow);
+
+            color: var(--brown);
+
+            border: 2px solid var(--brown);
+
+            padding: 6px 15px;
+
+            margin-bottom: 5px;
+
+            font-family: "Courier New", monospace;
+
+            font-weight: 900;
+
+            font-size: 18px;
+
+            letter-spacing: 2px;
+
+            box-shadow: 3px 3px 0 var(--brown);
+        }
+
+
+        /* =========================
+           CHAT BUBBLE
+           ========================= */
+
+        .mimi-chat {
+            position: absolute;
+
+            right: 125px;
+            bottom: 110px;
+
+            width: 245px;
+
+            padding: 16px 18px;
+
+            background-color: var(--cream);
+
+            color: var(--brown);
+
+            border: 3px solid var(--brown);
+
+            font-family: var(--main-font);
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            line-height: 1.4;
+
+            box-shadow: 5px 5px 0 var(--brown);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(10px);
+
+            transition: all 0.25s ease;
+        }
+
+
+        /* Speech bubble triangle */
+
+        .mimi-chat::after {
+            content: "";
+
+            position: absolute;
+
+            right: -14px;
+            bottom: 18px;
+
+            width: 20px;
+            height: 20px;
+
+            background-color: var(--cream);
+
+            border-right: 3px solid var(--brown);
+            border-top: 3px solid var(--brown);
+
+            transform: rotate(45deg);
+        }
+
+
+        /* SHOW CHAT */
+
+        .mimi-container.active .mimi-chat {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           CAT BUTTON
+           ========================= */
+
+        .mimi-button {
+            width: 140px;
+            height: 140px;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 0;
+
+            transition: transform 0.25s ease;
+        }
+
+        .mimi-button:hover {
+            transform: translateY(-6px) scale(1.05);
+        }
+
+
+        /* =========================
+           CAT IMAGES
+           ========================= */
+
+        .mimi-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+        .mimi-normal {
+            display: block;
+        }
+
+        .mimi-clicked {
+            display: none;
+        }
+
+
+        /* When Mimi is clicked */
+
+        .mimi-container.active .mimi-normal {
+            display: none;
+        }
+
+        .mimi-container.active .mimi-clicked {
+            display: block;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background-color: var(--brown);
+
+            color: var(--cream);
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: var(--yellow);
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .hero-logo {
+                top: 90px;
+                right: 5%;
+
+                width: 90px;
+                height: 90px;
+            }
+
+            .hero-content h1 {
+                font-size: 70px;
+
+                letter-spacing: -3px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .thumbnails {
+                flex-direction: column;
+            }
+
+            .thumbnail {
+                width: 280px;
+                height: 280px;
+            }
+
+            .mimi-container {
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .mimi-button {
+                width: 110px;
+                height: 110px;
+            }
+
+            .mimi-chat {
+                right: 90px;
+                bottom: 90px;
+
+                width: 210px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <nav>
+
+        <div class="nav-logo">
+            YOGUMI
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="#menu">
+                    MENU
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    CONTACT
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <section class="hero" id="home">
+
+
+        <!-- YOGUMI LOGO -->
+
+        <div class="hero-logo">
+
+            <img
+                src="newlogo.png"
+                alt="Yogumi Logo"
+            >
+        </div>
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-content">
+
+            <h1>
+                YOGUMI
+            </h1>
+
+            <p>
+                One scoop, instant yum!
+            </p>
+
+            <a href="#menu" class="order-button">
+                ORDER NOW
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+         ========================= -->
+
+    <section class="intro" id="about">
+
+        <div class="intro-content">
+
+            <h2>
+                SWEET. CREAMY. YUMMY.
+            </h2>
+
+            <p>
+                Welcome to Yogumi! We make delicious cheesecake
+                with lots of love and a little help from our
+                adorable mimi. Find your favorite flavor
+                and enjoy a little piece of happiness!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHEESECAKE MENU
+         ========================= -->
+
+    <section class="thumbnails" id="menu">
+
+
+        <!-- CHEESECAKE 1 -->
+
+        <a
+            href="cheesecake1.html"
+            class="thumbnail"
+        >
+
+            <img
+                src="biscoff.jpeg"
+                alt="Yogumi Cheesecake 1"
+            >
+
+            <div class="thumbnail-overlay">
+
+                <span>
+                    VIEW CHEESECAKE 🐾
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- CHEESECAKE 2 -->
+
+        <a
+            href="cheesecake2.html"
+            class="thumbnail"
+        >
+
+            <img
+                src="oreo.jpeg"
+                alt="Yogumi Cheesecake 2"
+            >
+
+            <div class="thumbnail-overlay">
+
+                <span>
+                    VIEW CHEESECAKE 🐾
+                </span>
+
+            </div>
+
+        </a>
+
+
+    </section>
+
+
+    <!-- =========================
+         YOGUMI CAT MASCOT
+         ========================= -->
+
+    <div
+        class="mimi-container"
+        id="mimi"
+    >
+
+
+        <!-- NAME -->
+
+        <div class="mimi-name">
+            MIMI
+        </div>
+
+
+        <!-- CHAT -->
+
+        <div
+            class="mimi-chat"
+            id="mimiChat"
+        >
+            Pssttt... wants some cheesecake?
+        </div>
+
+
+        <!-- CAT -->
+
+        <button
+            class="mimi-button"
+            onclick="toggleMimi()"
+            aria-label="Talk to Mimi"
+        >
+
+
+            <!-- NORMAL IMAGE -->
+
+            <img
+                class="mimi-image mimi-normal"
+                src="catclose.png"
+                alt="Mimi"
+            >
+
+
+            <!-- CLICKED IMAGE -->
+
+            <img
+                class="mimi-image mimi-clicked"
+                src="catopen.png"
+                alt="Mimi"
+            >
+
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer id="contact">
+
+        <p>
+            <strong>YOGUMI</strong>
+        </p>
+
+        <p>
+            Made with love and cheesecake
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Yogumi. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script>
+
+
+        /* =========================
+           MIMI RANDOM DIALOGUES
+           ========================= */
+
+        const mimiDialogues = [
+
+            "Pssttt... wants some cheesecake?",
+
+            "Hey! Don't forget to try our cheesecake!",
+
+            "Mmm... I can smell the cheesecake already!",
+
+            "Which flavor are you choosing?",
+
+            "You came back! I knew you wanted cheesecake!",
+
+            "Careful... one slice might not be enough!",
+
+            "Welcome to Yogumi!",
+
+            "Cheesecake makes everything better!",
+
+            "Have you checked out our menu yet?",
+
+            "Psst... I think you should order one.",
+
+            "I'm watching you... choose the cheesecake.",
+
+            "Yogumi says: treat yourself today!",
+
+            "One cheesecake, please! Actually... make it two.",
+
+            "Don't leave without trying something yummy!",
+
+            "Meow! Cheesecake time!",
+
+            "meow"
+
+        ];
+
+
+        /* =========================
+           MIMI CLICK
+           ========================= */
+
+        function toggleMimi() {
+
+            const mimi =
+                document.getElementById("mimi");
+
+            const chat =
+                document.getElementById("mimiChat");
+
+
+            mimi.classList.toggle("active");
+
+
+            /* Only choose a dialogue when opening */
+
+            if (mimi.classList.contains("active")) {
+
+                const randomIndex =
+                    Math.floor(
+                        Math.random() *
+                        mimiDialogues.length
+                    );
+
+
+                chat.textContent =
+                    mimiDialogues[randomIndex];
+
+            }
+
+        }
+
+
+        /* =========================
+           CHEESECAKE PAW CLICK
+           ========================= */
+
+        document
+            .querySelectorAll(".thumbnail")
+            .forEach(function(card) {
+
+
+                card.addEventListener(
+                    "click",
+                    function(event) {
+
+
+                        /* Stop page from changing immediately */
+
+                        event.preventDefault();
+
+
+                        /* Save the destination */
+
+                        const link =
+                            this.href;
+
+
+                        /* Create paw */
+
+                        const paw =
+                            document.createElement("div");
+
+
+                        paw.className =
+                            "paw-click";
+
+
+                        paw.textContent =
+                            "🐾";
+
+
+                        /* Put paw exactly where clicked */
+
+                        paw.style.left =
+                            event.clientX + "px";
+
+                        paw.style.top =
+                            event.clientY + "px";
+
+
+                        /* Add paw to page */
+
+                        document.body.appendChild(paw);
+
+
+                        /* Go to cheesecake page */
+
+                        setTimeout(
+                            function() {
+
+                                window.location.href =
+                                    link;
+
+                            },
+                            400
+                        );
+
+
+                    }
+                );
+
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>

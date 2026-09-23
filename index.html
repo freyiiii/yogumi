@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Yogumi - Biscoff Bliss</title>
+
+
+    <!-- Cat cursor -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.cursors-4u.net/cursors/animated/pawing-cat-0e49294c-32.css"
+    >
+
+
+    <style>
+
+        /* ========================================
+           BASIC RESET
+           ======================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background-color: #FFFAEB;
+
+            color: #5A3628;
+        }
+
+
+        :root {
+
+            --cream: #FFFAEB;
+
+            --yellow: #FECB0E;
+
+            --brown: #5A3628;
+
+            --light-brown: #8A5A44;
+
+            --main-font: Arial, sans-serif;
+
+        }
+
+
+
+        /* ========================================
+           NAVBAR
+           ======================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            height: 70px;
+
+            background-color: var(--yellow);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            z-index: 1000;
+
+        }
+
+
+        nav .nav-logo {
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            color: var(--brown);
+
+            text-decoration: none;
+
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            gap: 35px;
+
+        }
+
+
+        nav ul li a {
+
+            color: var(--brown);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+        }
+
+
+        nav ul li a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+
+        /* ========================================
+           HERO
+           ======================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            background-color: var(--cream);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            padding: 120px 8% 80px;
+
+        }
+
+
+        .hero-text {
+
+            max-width: 550px;
+
+        }
+
+
+        .hero-text h1 {
+
+            font-size: clamp(55px, 9vw, 110px);
+
+            line-height: 0.9;
+
+            font-weight: 900;
+
+            color: var(--brown);
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .hero-text p {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .order-button {
+
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background-color: var(--yellow);
+
+            color: var(--brown);
+
+            text-decoration: none;
+
+            font-weight: 900;
+
+            border: 3px solid var(--brown);
+
+            box-shadow: 6px 6px 0 var(--brown);
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .order-button:hover {
+
+            transform: translate(3px, 3px);
+
+            box-shadow: 3px 3px 0 var(--brown);
+
+        }
+
+
+        .hero-logo {
+
+            width: min(420px, 40vw);
+
+            height: auto;
+
+        }
+
+
+
+        /* ========================================
+           ABOUT
+           ======================================== */
+
+        .about {
+
+            background-color: var(--yellow);
+
+            padding: 90px 8%;
+
+            text-align: center;
+
+        }
+
+
+        .about h2 {
+
+            font-size: 48px;
+
+            font-weight: 900;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .about p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+
+        /* ========================================
+           CHEESECAKE MENU
+           ======================================== */
+
+        .menu {
+
+            background-color: var(--cream);
+
+            padding: 90px 7%;
+
+        }
+
+
+        .menu h2 {
+
+            text-align: center;
+
+            font-size: 45px;
+
+            font-weight: 900;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .menu-subtitle {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+            font-weight: bold;
+
+        }
+
+
+        .thumbnails {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 35px;
+
+        }
+
+
+        .thumbnail {
+
+            display: block;
+
+            width: 320px;
+
+            background-color: white;
+
+            border: 4px solid var(--brown);
+
+            text-decoration: none;
+
+            color: var(--brown);
+
+            box-shadow: 7px 7px 0 var(--brown);
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .thumbnail:hover {
+
+            transform: translateY(-7px);
+
+        }
+
+
+        .thumbnail img {
+
+            width: 100%;
+
+            height: 260px;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .thumbnail-info {
+
+            padding: 20px;
+
+        }
+
+
+        .thumbnail-info h3 {
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .thumbnail-info p {
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* ========================================
+           CUSTOMER REVIEWS
+           ======================================== */
+
+        .customer-reviews {
+
+            background-color: var(--cream);
+
+            color: var(--brown);
+
+            padding: 70px 7%;
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* RATING SUMMARY */
+
+        .rating-summary {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 60px;
+
+            width: 100%;
+
+            margin-bottom: 65px;
+
+        }
+
+
+        .rating-bars {
+
+            flex: 1;
+
+        }
+
+
+        .rating-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 14px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        .rating-row > span:first-child {
+
+            width: 45px;
+
+        }
+
+
+        .star-small {
+
+            width: 20px;
+
+            color: var(--yellow);
+
+            font-size: 18px;
+
+            -webkit-text-stroke: 0.5px var(--brown);
+
+        }
+
+
+        .rating-line {
+
+            flex: 1;
+
+            height: 8px;
+
+            background-color: #F3E9C5;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .rating-line div {
+
+            width: 0%;
+
+            height: 100%;
+
+            background-color: var(--yellow);
+
+            border-radius: 10px;
+
+            transition: width 0.4s ease;
+
+        }
+
+
+        .rating-count {
+
+            width: 35px;
+
+            text-align: right;
+
+        }
+
+
+        /* AVERAGE */
+
+        .overall-rating {
+
+            width: 300px;
+
+            min-width: 300px;
+
+            padding: 25px;
+
+            background-color: #FFFBEA;
+
+            text-align: center;
+
+        }
+
+
+        .average-number {
+
+            font-size: 42px;
+
+            font-weight: 900;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .big-stars {
+
+            color: var(--yellow);
+
+            -webkit-text-stroke: 1px var(--brown);
+
+            font-size: 27px;
+
+            letter-spacing: 3px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .rating-total {
+
+            margin-top: 10px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* ========================================
+           REVIEWS + FORM
+           ======================================== */
+
+        .reviews-content {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 55px;
+
+            width: 100%;
+
+        }
+
+
+        .recent-feedbacks h2,
+        .add-review h2 {
+
+            margin: 0 0 25px;
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+        }
+
+
+        /* REVIEW CARDS */
+
+        #reviewsList {
+
+            width: 100%;
+
+            max-height: 500px;
+
+            overflow-y: auto;
+
+            padding-right: 5px;
+
+        }
+
+
+        .review-item {
+
+            display: block;
+
+            width: 100%;
+
+            background-color: white;
+
+            border: 1px solid #E9E2D7;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            box-shadow: 0 2px 7px rgba(90, 54, 40, 0.05);
+
+        }
+
+
+        .review-item-name {
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .review-item-stars {
+
+            color: var(--yellow);
+
+            -webkit-text-stroke: 1px var(--brown);
+
+            font-size: 17px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .review-item-text {
+
+            margin: 0;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            word-wrap: break-word;
+
+        }
+
+
+        .no-reviews {
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            padding: 20px 0;
+
+        }
+
+
+
+        /* ========================================
+           REVIEW FORM
+           ======================================== */
+
+        .add-review form {
+
+            width: 100%;
+
+        }
+
+
+        .add-review label {
+
+            display: block;
+
+            margin-top: 18px;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* STAR INPUT */
+
+        .form-stars {
+
+            display: flex;
+
+            gap: 3px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .form-stars button {
+
+            padding: 0;
+
+            border: none;
+
+            background: transparent;
+
+            color: #D9D2C5;
+
+            font-size: 26px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+        }
+
+
+        .form-stars button.selected {
+
+            color: var(--yellow);
+
+            -webkit-text-stroke: 1px var(--brown);
+
+        }
+
+
+        /* INPUTS */
+
+        .add-review input,
+        .add-review textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding: 13px;
+
+            border: 1px solid #DCD5CA;
+
+            border-radius: 5px;
+
+            background-color: white;
+
+            color: var(--brown);
+
+            font-family: var(--main-font);
+
+            font-size: 14px;
+
+            outline: none;
+
+        }
+
+
+        .add-review textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+
+        }
+
+
+        .add-review input:focus,
+        .add-review textarea:focus {
+
+            border: 2px solid var(--yellow);
+
+        }
+
+
+        /* SUBMIT */
+
+        .review-submit {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background-color: var(--yellow);
+
+            color: var(--brown);
+
+            font-family: var(--main-font);
+
+            font-size: 15px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .review-submit:hover {
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .review-message {
+
+            min-height: 20px;
+
+            margin-top: 12px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* ========================================
+           MIMI
+           ======================================== */
+
+        .mimi-container {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 2000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-end;
+
+        }
+
+
+        .mimi-chat {
+
+            background-color: white;
+
+            color: var(--brown);
+
+            border: 3px solid var(--brown);
+
+            border-radius: 15px;
+
+            padding: 12px 16px;
+
+            margin-bottom: 8px;
+
+            max-width: 220px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            box-shadow: 4px 4px 0 var(--brown);
+
+        }
+
+
+        .mimi-button {
+
+            border: none;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            padding: 0;
+
+        }
+
+
+        .mimi-button img {
+
+            width: 90px;
+
+            height: 90px;
+
+            object-fit: contain;
+
+        }
+
+
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+
+        footer {
+
+            background-color: var(--brown);
+
+            color: var(--cream);
+
+            text-align: center;
+
+            padding: 45px 20px;
+
+        }
+
+
+        footer p {
+
+            margin: 7px 0;
+
+        }
+
+
+
+        /* ========================================
+           MOBILE
+           ======================================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                height: 60px;
+
+                padding: 0 5%;
+
+            }
+
+
+            nav .nav-logo {
+
+                font-size: 20px;
+
+            }
+
+
+            nav ul {
+
+                gap: 13px;
+
+            }
+
+
+            nav ul li a {
+
+                font-size: 11px;
+
+            }
+
+
+            .hero {
+
+                min-height: auto;
+
+                padding: 120px 7% 70px;
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .hero-logo {
+
+                width: 220px;
+
+            }
+
+
+            .about h2 {
+
+                font-size: 35px;
+
+            }
+
+
+            .menu h2 {
+
+                font-size: 35px;
+
+            }
+
+
+            .thumbnails {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+
+            .thumbnail {
+
+                width: 100%;
+
+                max-width: 350px;
+
+            }
+
+
+            .rating-summary {
+
+                flex-direction: column;
+
+                gap: 30px;
+
+            }
+
+
+            .rating-bars {
+
+                width: 100%;
+
+            }
+
+
+            .overall-rating {
+
+                width: 100%;
+
+                min-width: 0;
+
+            }
+
+
+            .reviews-content {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+            }
+
+
+            .recent-feedbacks h2,
+            .add-review h2 {
+
+                font-size: 25px;
+
+            }
+
+
+            .review-item {
+
+                padding: 17px;
+
+            }
+
+
+            .big-stars {
+
+                font-size: 24px;
+
+            }
+
+
+            .mimi-container {
+
+                right: 10px;
+
+                bottom: 10px;
+
+            }
+
+
+            .mimi-button img {
+
+                width: 75px;
+
+                height: 75px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVBAR
+         ======================================== -->
+
+    <nav>
+
+        <a
+            href="#home"
+            class="nav-logo"
+        >
+            YOGUMI
+        </a>
+
+
+        <ul>
+
+            <li>
+                <a href="#home">
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="#menu">
+                    MENU
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    CONTACT
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ========================================
+         HERO
+         ======================================== -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-text">
+
+            <h1>
+                CHEESECAKE
+            </h1>
+
+
+            <p>
+                One scoop, instant yum!
+            </p>
+
+
+            <a
+                href="#menu"
+                class="order-button"
+            >
+                ORDER NOW
+            </a>
+
+        </div>
+
+
+        <img
+            src="newlogo.png"
+            alt="Yogumi Logo"
+            class="hero-logo"
+        >
+
+    </section>
+
+
+
+    <!-- ========================================
+         ABOUT
+         ======================================== -->
+
+    <section
+        class="about"
+        id="about"
+    >
+
+        <h2>
+            SWEET. CREAMY. YUMMY.
+        </h2>
+
+
+        <p>
+            Welcome to Yogumi! We make delicious,
+            creamy cheesecake with flavors made
+            to satisfy your sweet cravings.
+            Choose your favorite flavor and
+            enjoy your little piece of happiness.
+        </p>
+
+    </section>
+
+
+
+    <!-- ========================================
+         CHEESECAKE MENU
+         ======================================== -->
+
+    <section
+        class="menu"
+        id="menu"
+    >
+
+        <h2>
+            OUR CHEESECAKES
+        </h2>
+
+
+        <p class="menu-subtitle">
+            Pick your favorite!
+        </p>
+
+
+        <div class="thumbnails">
+
+
+            <!-- BISCOFF -->
+
+            <a
+                href="cheesecake1.html"
+                class="thumbnail"
+            >
+
+                <img
+                    src="biscoff.jpeg"
+                    alt="Biscoff Cheesecake"
+                >
+
+
+                <div class="thumbnail-info">
+
+                    <h3>
+                        Biscoff Bliss
+                    </h3>
+
+
+                    <p>
+                        Creamy cheesecake with
+                        delicious Biscoff goodness.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- OREO -->
+
+            <a
+                href="cheesecake2.html"
+                class="thumbnail"
+            >
+
+                <img
+                    src="oreo.jpeg"
+                    alt="Oreo Cheesecake"
+                >
+
+
+                <div class="thumbnail-info">
+
+                    <h3>
+                        Oreo Dream
+                    </h3>
+
+
+                    <p>
+                        A creamy cheesecake packed
+                        with Oreo goodness.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         CUSTOMER REVIEWS
+         ======================================== -->
+
+    <section
+        class="customer-reviews"
+        id="reviews"
+    >
+
+
+        <!-- RATING SUMMARY -->
+
+        <div class="rating-summary">
+
+
+            <!-- STAR BREAKDOWN -->
+
+            <div class="rating-bars">
+
+
+                <div class="rating-row">
+
+                    <span>
+                        FIVE
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="fiveBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="fiveCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        FOUR
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="fourBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="fourCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        THREE
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="threeBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="threeCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        TWO
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="twoBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="twoCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        ONE
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="oneBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="oneCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- OVERALL RATING -->
+
+            <div class="overall-rating">
+
+                <div
+                    class="average-number"
+                    id="averageRating"
+                >
+                    0.0
+                </div>
+
+
+                <div class="big-stars">
+                    ★★★★★
+                </div>
+
+
+                <div class="rating-total">
+
+                    <span id="totalRatings">
+                        0
+                    </span>
+
+                    Ratings
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REVIEWS + FORM -->
+
+        <div class="reviews-content">
+
+
+            <!-- RECENT FEEDBACKS -->
+
+            <div class="recent-feedbacks">
+
+                <h2>
+                    Recent Feedbacks
+                </h2>
+
+
+                <div id="reviewsList">
+
+                    <p class="no-reviews">
+                        No reviews yet.
+                        Be the first to review Yogumi!
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ADD REVIEW -->
+
+            <div class="add-review">
+
+                <h2>
+                    Add a Review
+                </h2>
+
+
+                <form id="reviewForm">
+
+
+                    <label>
+                        Add Your Rating *
+                    </label>
+
+
+                    <div
+                        class="form-stars"
+                        id="formStars"
+                    >
+
+                        <button
+                            type="button"
+                            data-rating="1"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="2"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="3"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="4"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="5"
+                        >
+                            ★
+                        </button>
+
+                    </div>
+
+
+                    <label for="customerName">
+                        Name *
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Your name"
+                        maxlength="50"
+                        required
+                    >
+
+
+                    <label for="customerReview">
+                        Write Your Review *
+                    </label>
+
+
+                    <textarea
+                        id="customerReview"
+                        placeholder="Write your review..."
+                        maxlength="500"
+                        required
+                    ></textarea>
+
+
+                    <button
+                        type="submit"
+                        class="review-submit"
+                    >
+                        Submit
+                    </button>
+
+
+                    <p
+                        class="review-message"
+                        id="reviewMessage"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         MIMI
+         ======================================== -->
+
+    <div class="mimi-container">
+
+
+        <div
+            class="mimi-chat"
+            id="mimiChat"
+        >
+            Pssttt... wants some cheesecake?
+        </div>
+
+
+        <button
+            class="mimi-button"
+            id="mimiButton"
+            type="button"
+        >
+
+            <img
+                src="catclose.png"
+                id="mimiImage"
+                alt="Mimi"
+            >
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+
+    <footer id="contact">
+
+        <p>
+            <strong>
+                YOGUMI
+            </strong>
+        </p>
+
+
+        <p>
+            Made with love and cheesecake
+        </p>
+
+
+        <br>
+
+
+        <p>
+            © 2026 Yogumi. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+
+    <script>
+
+
+        /* ========================================
+           MIMI
+           ======================================== */
+
+        const mimiButton =
+            document.getElementById(
+                "mimiButton"
+            );
+
+
+        const mimiImage =
+            document.getElementById(
+                "mimiImage"
+            );
+
+
+        const mimiChat =
+            document.getElementById(
+                "mimiChat"
+            );
+
+
+        const mimiDialogues = [
+
+            "Pssttt... wants some cheesecake?",
+
+            "Meow! Pick your favorite!",
+
+            "Biscoff is calling you...",
+
+            "Oreo cheesecake sounds yummy!",
+
+            "Don't forget to treat yourself!",
+
+            "Mimi approves of cheesecake!",
+
+            "One cheesecake, please!",
+
+            "Psst... I smell cheesecake!"
+
+        ];
+
+
+        let mimiOpen = false;
+
+
+        mimiButton.addEventListener(
+            "click",
+            function() {
+
+                mimiOpen =
+                    !mimiOpen;
+
+
+                if (mimiOpen) {
+
+                    mimiImage.src =
+                        "catopen.png";
+
+
+                    mimiChat.textContent =
+                        mimiDialogues[
+                            Math.floor(
+                                Math.random() *
+                                mimiDialogues.length
+                            )
+                        ];
+
+
+                    mimiChat.style.display =
+                        "block";
+
+                } else {
+
+                    mimiImage.src =
+                        "catclose.png";
+
+
+                    mimiChat.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+
+        /* ========================================
+           PAW CLICK EFFECT
+           ======================================== */
+
+        document
+            .querySelectorAll(".thumbnail")
+            .forEach(
+                function(thumbnail) {
+
+                    thumbnail.addEventListener(
+                        "click",
+                        function() {
+
+                            this.style.transform =
+                                "scale(0.96)";
+
+                            setTimeout(
+                                () => {
+
+                                    this.style.transform =
+                                        "";
+
+                                },
+                                150
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* ========================================
+           REVIEW SYSTEM
+           NO SUPABASE
+           ======================================== */
+
+
+        /*
+         * Get saved reviews from the browser.
+         *
+         * If there are none, use an empty array.
+         */
+
+        let reviews =
+            JSON.parse(
+                localStorage.getItem(
+                    "yogumiReviews"
+                )
+            ) || [];
+
+
+        let selectedRating = 0;
+
+
+
+        /* ========================================
+           STAR SELECTION
+           ======================================== */
+
+        const starButtons =
+            document.querySelectorAll(
+                "#formStars button"
+            );
+
+
+        starButtons.forEach(
+            function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        selectedRating =
+                            Number(
+                                this.dataset.rating
+                            );
+
+
+                        starButtons.forEach(
+                            function(star) {
+
+                                const rating =
+                                    Number(
+                                        star.dataset.rating
+                                    );
+
+
+                                if (
+                                    rating <=
+                                    selectedRating
+                                ) {
+
+                                    star.classList.add(
+                                        "selected"
+                                    );
+
+                                } else {
+
+                                    star.classList.remove(
+                                        "selected"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ========================================
+           DISPLAY REVIEWS
+           ======================================== */
+
+        function displayReviews() {
+
+            const reviewsList =
+                document.getElementById(
+                    "reviewsList"
+                );
+
+
+            if (
+                reviews.length === 0
+            ) {
+
+                reviewsList.innerHTML = `
+
+                    <p class="no-reviews">
+
+                        No reviews yet.
+                        Be the first to review Yogumi!
+
+                    </p>
+
+                `;
+
+
+                updateRatingSummary();
+
+                return;
+
+            }
+
+
+            reviewsList.innerHTML = "";
+
+
+            /*
+             * Newest reviews appear first.
+             */
+
+            reviews
+                .slice()
+                .reverse()
+                .forEach(
+                    function(review) {
+
+
+                        const reviewItem =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        reviewItem.className =
+                            "review-item";
+
+
+                        /*
+                         * NAME
+                         */
+
+                        const name =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        name.className =
+                            "review-item-name";
+
+
+                        name.textContent =
+                            review.name;
+
+
+                        /*
+                         * STARS
+                         */
+
+                        const stars =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        stars.className =
+                            "review-item-stars";
+
+
+                        stars.textContent =
+                            "★".repeat(
+                                review.rating
+                            ) +
+                            "☆".repeat(
+                                5 -
+                                review.rating
+                            );
+
+
+                        /*
+                         * COMMENT
+                         */
+
+                        const text =
+                            document.createElement(
+                                "p"
+                            );
+
+
+                        text.className =
+                            "review-item-text";
+
+
+                        text.textContent =
+                            review.comment;
+
+
+                        /*
+                         * BUILD CARD
+                         */
+
+                        reviewItem.appendChild(
+                            name
+                        );
+
+
+                        reviewItem.appendChild(
+                            stars
+                        );
+
+
+                        reviewItem.appendChild(
+                            text
+                        );
+
+
+                        /*
+                         * ADD TO PAGE
+                         */
+
+                        reviewsList.appendChild(
+                            reviewItem
+                        );
+
+                    }
+                );
+
+
+            updateRatingSummary();
+
+        }
+
+
+
+        /* ========================================
+           RATING SUMMARY
+           ======================================== */
+
+        function updateRatingSummary() {
+
+            const total =
+                reviews.length;
+
+
+            document.getElementById(
+                "totalRatings"
+            ).textContent =
+                total;
+
+
+            if (
+                total === 0
+            ) {
+
+                document.getElementById(
+                    "averageRating"
+                ).textContent =
+                    "0.0";
+
+
+                setRatingBar(
+                    1,
+                    0
+                );
+
+                setRatingBar(
+                    2,
+                    0
+                );
+
+                setRatingBar(
+                    3,
+                    0
+                );
+
+                setRatingBar(
+                    4,
+                    0
+                );
+
+                setRatingBar(
+                    5,
+                    0
+                );
+
+                return;
+
+            }
+
+
+            const counts = {
+
+                1: 0,
+
+                2: 0,
+
+                3: 0,
+
+                4: 0,
+
+                5: 0
+
+            };
+
+
+            let totalScore = 0;
+
+
+            reviews.forEach(
+                function(review) {
+
+                    counts[
+                        review.rating
+                    ]++;
+
+
+                    totalScore +=
+                        review.rating;
+
+                }
+            );
+
+
+            /*
+             * Average rating
+             */
+
+            const average =
+                totalScore /
+                total;
+
+
+            document.getElementById(
+                "averageRating"
+            ).textContent =
+                average.toFixed(1);
+
+
+            /*
+             * Rating bars
+             */
+
+            setRatingBar(
+                1,
+                counts[1]
+            );
+
+            setRatingBar(
+                2,
+                counts[2]
+            );
+
+            setRatingBar(
+                3,
+                counts[3]
+            );
+
+            setRatingBar(
+                4,
+                counts[4]
+            );
+
+            setRatingBar(
+                5,
+                counts[5]
+            );
+
+        }
+
+
+
+        /* ========================================
+           INDIVIDUAL RATING BAR
+           ======================================== */
+
+        function setRatingBar(
+            rating,
+            count
+        ) {
+
+            const names = {
+
+                1: "one",
+
+                2: "two",
+
+                3: "three",
+
+                4: "four",
+
+                5: "five"
+
+            };
+
+
+            const name =
+                names[rating];
+
+
+            /*
+             * Number beside bar
+             */
+
+            document.getElementById(
+                name + "Count"
+            ).textContent =
+                count;
+
+
+            /*
+             * Percentage
+             */
+
+            const total =
+                reviews.length;
+
+
+            let percentage = 0;
+
+
+            if (
+                total > 0
+            ) {
+
+                percentage =
+                    (
+                        count /
+                        total
+                    ) *
+                    100;
+
+            }
+
+
+            /*
+             * Bar width
+             */
+
+            document.getElementById(
+                name + "Bar"
+            ).style.width =
+                percentage + "%";
+
+        }
+
+
+
+        /* ========================================
+           SUBMIT REVIEW
+           ======================================== */
+
+        document
+            .getElementById(
+                "reviewForm"
+            )
+            .addEventListener(
+                "submit",
+                function(event) {
+
+                    /*
+                     * Prevent page reload.
+                     */
+
+                    event.preventDefault();
+
+
+                    const nameInput =
+                        document.getElementById(
+                            "customerName"
+                        );
+
+
+                    const reviewInput =
+                        document.getElementById(
+                            "customerReview"
+                        );
+
+
+                    const message =
+                        document.getElementById(
+                            "reviewMessage"
+                        );
+
+
+                    const name =
+                        nameInput.value.trim();
+
+
+                    const comment =
+                        reviewInput.value.trim();
+
+
+
+                    /* CHECK RATING */
+
+                    if (
+                        selectedRating === 0
+                    ) {
+
+                        message.textContent =
+                            "Please choose a rating.";
+
+                        return;
+
+                    }
+
+
+
+                    /* CHECK NAME */
+
+                    if (
+                        !name
+                    ) {
+
+                        message.textContent =
+                            "Please enter your name.";
+
+                        return;
+
+                    }
+
+
+
+                    /* CHECK COMMENT */
+
+                    if (
+                        !comment
+                    ) {
+
+                        message.textContent =
+                            "Please write a review.";
+
+                        return;
+
+                    }
+
+
+
+                    /*
+                     * CREATE REVIEW
+                     */
+
+                    const newReview = {
+
+                        name:
+                            name,
+
+                        rating:
+                            selectedRating,
+
+                        comment:
+                            comment
+
+                    };
+
+
+
+                    /*
+                     * Add to reviews
+                     */
+
+                    reviews.push(
+                        newReview
+                    );
+
+
+
+                    /*
+                     * Save in browser
+                     */
+
+                    localStorage.setItem(
+                        "yogumiReviews",
+                        JSON.stringify(
+                            reviews
+                        )
+                    );
+
+
+
+                    /*
+                     * Display immediately
+                     */
+
+                    displayReviews();
+
+
+
+                    /*
+                     * Clear form
+                     */
+
+                    nameInput.value =
+                        "";
+
+                    reviewInput.value =
+                        "";
+
+
+
+                    /*
+                     * Reset stars
+                     */
+
+                    selectedRating =
+                        0;
+
+
+                    starButtons.forEach(
+                        function(star) {
+
+                            star.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+
+                    /*
+                     * Success message
+                     */
+
+                    message.textContent =
+                        "Review submitted! ♡";
+
+
+
+                    /*
+                     * Remove message later
+                     */
+
+                    setTimeout(
+                        function() {
+
+                            message.textContent =
+                                "";
+
+                        },
+                        2500
+                    );
+
+                }
+            );
+
+
+
+        /* ========================================
+           LOAD SAVED REVIEWS
+           ======================================== */
+
+        displayReviews();
+
+    </script>
+
+</body>
+
+</html>

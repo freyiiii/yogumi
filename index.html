@@ -4,55 +4,73 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yogumi</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <!-- Animated Pawing Peach Cat Cursor -->
-    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/pawing-cat-0e49294c-32.css">
+    <title>Yogumi - Biscoff Bliss</title>
+
+
+    <!-- Cat cursor -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.cursors-4u.net/cursors/animated/pawing-cat-0e49294c-32.css"
+    >
+
 
     <style>
 
-        /* =========================
-           EASY FONT CHANGE
-           ========================= */
-
-        :root {
-            --cream: #FFFAEB;
-            --yellow: #FECB0E;
-            --brown: #5A3628;
-
-            --main-font: Arial, sans-serif;
-        }
-
-
-        /* =========================
+        /* ========================================
            BASIC RESET
-           ========================= */
+           ======================================== */
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
+
 
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            background-color: var(--cream);
-            color: var(--brown);
-            font-family: var(--main-font);
+            font-family: Arial, sans-serif;
+            background-color: #FFFAEB;
+            color: #5A3628;
+            overflow-x: hidden;
         }
 
 
-        /* =========================
-           NAVIGATION
-           ========================= */
+        :root {
+
+            --cream: #FFFAEB;
+            --yellow: #FECB0E;
+            --brown: #5A3628;
+            --light-brown: #8A5A44;
+
+            --soft-pink: #FFE5E8;
+            --soft-yellow: #FFF4C7;
+            --soft-brown: #F3E9C5;
+
+            --main-font: Arial, sans-serif;
+
+        }
+
+
+
+        /* ========================================
+           NAVBAR
+           ======================================== */
 
         nav {
+
             position: fixed;
+
             top: 0;
             left: 0;
 
@@ -67,599 +85,1634 @@
 
             padding: 0 7%;
 
-            z-index: 100;
+            z-index: 1000;
+
         }
 
-        .nav-logo {
+
+        nav .nav-logo {
+
             font-size: 25px;
             font-weight: 900;
-            letter-spacing: 2px;
-        }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
             color: var(--brown);
+
             text-decoration: none;
 
-            font-weight: bold;
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+            gap: 35px;
+
+        }
+
+
+        nav ul li a {
+
+            color: var(--brown);
+
+            text-decoration: none;
+
             font-size: 14px;
+            font-weight: 900;
 
-            transition: opacity 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.6;
         }
 
 
-        /* =========================
+        nav ul li a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+
+        /* ========================================
            HERO
-           ========================= */
+           ======================================== */
 
         .hero {
+
             min-height: 100vh;
 
             background-color: var(--cream);
 
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            padding: 120px 10% 80px;
 
             position: relative;
 
-            padding: 100px 7% 60px;
-        }
-
-
-        /* =========================
-           YOGUMI LOGO
-           ========================= */
-
-        .hero-logo {
-            position: absolute;
-
-            top: 100px;
-            right: 7%;
-
-            width: 220px;
-            height: 220px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: transparent;
-
-            border: none;
-
-            border-radius: 50%;
-
             overflow: hidden;
-        }
 
-        .hero-logo img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            display: block;
-
-            border-radius: 50%;
         }
 
 
-        /* =========================
-           HERO CONTENT
-           ========================= */
+        .hero-text {
 
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
+            max-width: 560px;
+
+            flex: 1;
+
+            position: relative;
+
+            z-index: 2;
+
         }
 
-        .hero-content h1 {
-            font-size: clamp(60px, 12vw, 150px);
+
+        .hero-text h1 {
+
+            font-size: clamp(55px, 8vw, 95px);
 
             line-height: 0.9;
 
             font-weight: 900;
 
-            letter-spacing: -5px;
-
-            margin-bottom: 25px;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
-
-
-        /* =========================
-           ORDER BUTTON
-           ========================= */
-
-        .order-button {
-            display: inline-block;
-
-            background-color: var(--yellow);
             color: var(--brown);
 
-            padding: 16px 35px;
+            margin-bottom: 25px;
+
+        }
+
+
+        .hero-text p {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .order-button {
+
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background-color: var(--yellow);
+
+            color: var(--brown);
 
             text-decoration: none;
 
-            font-size: 16px;
             font-weight: 900;
 
             border: 3px solid var(--brown);
 
             box-shadow: 6px 6px 0 var(--brown);
 
-            transition: all 0.2s ease;
+            transition: 0.2s ease;
+
         }
 
+
         .order-button:hover {
+
             transform: translate(3px, 3px);
 
             box-shadow: 3px 3px 0 var(--brown);
+
         }
 
 
-        /* =========================
-           ABOUT
-           ========================= */
+        /* FIXED DESKTOP LOGO SIZE */
 
-        .intro {
-            min-height: 300px;
+        .hero-logo {
+
+            width: min(300px, 30vw);
+
+            max-width: 300px;
+
+            height: auto;
+
+            flex-shrink: 0;
+
+            object-fit: contain;
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+
+
+        /* ========================================
+           ABOUT
+           ======================================== */
+
+        .about {
 
             background-color: var(--yellow);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 90px 8%;
 
             text-align: center;
 
-            padding: 70px 10%;
         }
 
-        .intro-content {
-            max-width: 700px;
-        }
 
-        .intro h2 {
-            font-size: 40px;
+        .about h2 {
+
+            font-size: 48px;
+
+            font-weight: 900;
 
             margin-bottom: 20px;
 
-            font-weight: 900;
         }
 
-        .intro p {
+
+        .about p {
+
+            max-width: 750px;
+
+            margin: auto;
+
             font-size: 17px;
 
             line-height: 1.7;
+
         }
 
 
-        /* =========================
-           CHEESECAKE SECTION
-           ========================= */
 
-        .thumbnails {
-            min-height: 500px;
+        /* ========================================
+           CHEESECAKE MENU
+           ======================================== */
+
+        .menu {
 
             background-color: var(--cream);
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 90px 7%;
 
-            gap: 45px;
-
-            padding: 80px 7%;
         }
 
 
-        /* =========================
-           CLICKABLE THUMBNAILS
-           ========================= */
+        .menu h2 {
+
+            text-align: center;
+
+            font-size: 45px;
+
+            font-weight: 900;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .menu-subtitle {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+            font-weight: bold;
+
+        }
+
+
+        .thumbnails {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 35px;
+
+        }
+
 
         .thumbnail {
-            position: relative;
 
-            width: 330px;
-            height: 330px;
+            display: block;
 
-            overflow: hidden;
-
-            border: 4px solid var(--brown);
+            width: 320px;
 
             background-color: white;
+
+            border: 4px solid var(--brown);
 
             text-decoration: none;
 
             color: var(--brown);
 
-            display: block;
+            box-shadow: 7px 7px 0 var(--brown);
 
-            transition: transform 0.2s ease;
+            transition: 0.2s ease;
+
         }
+
 
         .thumbnail:hover {
-            transform: translateY(-5px);
+
+            transform: translateY(-7px);
+
         }
 
+
         .thumbnail img {
+
             width: 100%;
-            height: 100%;
+
+            height: 260px;
 
             object-fit: cover;
 
             display: block;
 
-            transition: transform 0.3s ease;
-        }
-
-        .thumbnail:hover img {
-            transform: scale(1.05);
         }
 
 
-        /* =========================
-           THUMBNAIL OVERLAY
-           ========================= */
+        .thumbnail-info {
 
-        .thumbnail-overlay {
-            position: absolute;
+            padding: 20px;
 
-            bottom: 0;
-            left: 0;
+        }
+
+
+        .thumbnail-info h3 {
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .thumbnail-info p {
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* ========================================
+           CUSTOMER REVIEWS
+           ======================================== */
+
+        .customer-reviews {
+
+            background-color: var(--cream);
+
+            color: var(--brown);
+
+            padding: 70px 7%;
 
             width: 100%;
 
-            background-color: var(--yellow);
+            overflow: hidden;
 
-            padding: 15px;
+        }
+
+
+
+        /* ========================================
+           STORAGE REMINDER
+           ======================================== */
+
+        .storage-reminder {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 0 auto 60px;
+
+            padding: 20px 25px;
+
+            background-color: var(--soft-yellow);
+
+            border: 2px dashed var(--brown);
+
+            border-radius: 18px;
 
             text-align: center;
 
-            border-top: 3px solid var(--brown);
+            box-shadow: 4px 4px 0 var(--brown);
+
         }
 
-        .thumbnail-overlay span {
+
+        .storage-reminder .reminder-icon {
+
+            font-size: 28px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .storage-reminder strong {
+
+            display: block;
+
+            font-size: 17px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .storage-reminder p {
+
             font-size: 14px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        /* ========================================
+           RATING SUMMARY
+           ======================================== */
+
+        .rating-summary {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 60px;
+
+            width: 100%;
+
+            margin-bottom: 65px;
+
+        }
+
+
+        .rating-bars {
+
+            flex: 1;
+
+        }
+
+
+        .rating-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 14px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        .rating-row > span:first-child {
+
+            width: 45px;
+
+        }
+
+
+        .star-small {
+
+            width: 20px;
+
+            color: var(--yellow);
+
+            font-size: 18px;
+
+            -webkit-text-stroke: 0.5px var(--brown);
+
+        }
+
+
+        .rating-line {
+
+            flex: 1;
+
+            height: 8px;
+
+            background-color: #F3E9C5;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .rating-line div {
+
+            width: 0%;
+
+            height: 100%;
+
+            background-color: var(--yellow);
+
+            border-radius: 10px;
+
+            transition: width 0.4s ease;
+
+        }
+
+
+        .rating-count {
+
+            width: 35px;
+
+            text-align: right;
+
+        }
+
+
+
+        /* ========================================
+           AVERAGE
+           ======================================== */
+
+        .overall-rating {
+
+            width: 300px;
+
+            min-width: 300px;
+
+            padding: 25px;
+
+            background-color: #FFFBEA;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+        }
+
+
+        .average-number {
+
+            font-size: 42px;
 
             font-weight: 900;
 
+            margin-bottom: 8px;
+
+        }
+
+
+        .big-stars {
+
+            color: var(--yellow);
+
+            -webkit-text-stroke: 1px var(--brown);
+
+            font-size: 27px;
+
+            letter-spacing: 3px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .rating-total {
+
+            margin-top: 10px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* ========================================
+           REVIEWS + FORM
+           ======================================== */
+
+        .reviews-content {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 55px;
+
+            width: 100%;
+
+        }
+
+
+        .recent-feedbacks h2,
+        .add-review h2 {
+
+            margin: 0 0 25px;
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+        }
+
+
+
+        /* ========================================
+           REVIEW CARDS
+           ======================================== */
+
+        #reviewsList {
+
+            width: 100%;
+
+            max-height: 500px;
+
+            overflow-y: auto;
+
+            padding-right: 5px;
+
+        }
+
+
+        .review-item {
+
+            display: block;
+
+            width: 100%;
+
+            background-color: white;
+
+            border: 1px solid #E9E2D7;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            box-shadow: 0 2px 7px rgba(90, 54, 40, 0.05);
+
+        }
+
+
+        .review-item-name {
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .review-item-stars {
+
+            color: var(--yellow);
+
+            -webkit-text-stroke: 1px var(--brown);
+
+            font-size: 17px;
+
             letter-spacing: 1px;
-        }
 
-
-        /* =========================
-           PAW CLICK ANIMATION
-           ========================= */
-
-        .paw-click {
-            position: fixed;
-
-            pointer-events: none;
-
-            z-index: 9999;
-
-            font-size: 45px;
-
-            transform: translate(-50%, -50%) scale(0.5);
-
-            opacity: 0;
-
-            animation: pawClick 0.5s ease-out forwards;
-        }
-
-        @keyframes pawClick {
-
-            0% {
-                opacity: 0;
-
-                transform:
-                    translate(-50%, -50%)
-                    scale(0.5)
-                    rotate(-15deg);
-            }
-
-            30% {
-                opacity: 1;
-
-                transform:
-                    translate(-50%, -50%)
-                    scale(1.15)
-                    rotate(5deg);
-            }
-
-            60% {
-                opacity: 1;
-
-                transform:
-                    translate(-50%, -50%)
-                    scale(0.95)
-                    rotate(-5deg);
-            }
-
-            100% {
-                opacity: 0;
-
-                transform:
-                    translate(-50%, -50%)
-                    scale(1.3)
-                    rotate(10deg);
-            }
+            margin-bottom: 10px;
 
         }
 
 
-        /* =========================
-           MIMI / CAT MASCOT
-           ========================= */
+        .review-item-text {
 
-        .mimi-container {
-            position: fixed;
+            margin: 0;
 
-            right: 25px;
-            bottom: 25px;
+            font-size: 14px;
 
-            z-index: 1000;
+            line-height: 1.6;
+
+            word-wrap: break-word;
+
+        }
+
+
+
+        /* ========================================
+           REVIEW PHOTO
+           ======================================== */
+
+        .review-photo {
+
+            width: 100%;
+
+            max-width: 300px;
+
+            max-height: 260px;
+
+            object-fit: cover;
+
+            display: block;
+
+            margin-top: 15px;
+
+            border-radius: 14px;
+
+            border: 3px solid var(--soft-brown);
+
+            background-color: var(--soft-yellow);
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .review-photo:hover {
+
+            transform: rotate(-1deg) scale(1.02);
+
+        }
+
+
+        .no-reviews {
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            padding: 20px 0;
+
+        }
+
+
+
+        /* ========================================
+           REVIEW FORM
+           ======================================== */
+
+        .add-review form {
+
+            width: 100%;
+
+        }
+
+
+        .add-review label {
+
+            display: block;
+
+            margin-top: 18px;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* ========================================
+           STAR INPUT
+           ======================================== */
+
+        .form-stars {
+
+            display: flex;
+
+            gap: 3px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .form-stars button {
+
+            padding: 0;
+
+            border: none;
+
+            background: transparent;
+
+            color: #D9D2C5;
+
+            font-size: 26px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            transition: 0.15s ease;
+
+        }
+
+
+        .form-stars button:hover {
+
+            transform: scale(1.15);
+
+        }
+
+
+        .form-stars button.selected {
+
+            color: var(--yellow);
+
+            -webkit-text-stroke: 1px var(--brown);
+
+        }
+
+
+
+        /* ========================================
+           INPUTS
+           ======================================== */
+
+        .add-review input,
+        .add-review textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding: 13px;
+
+            border: 1px solid #DCD5CA;
+
+            border-radius: 8px;
+
+            background-color: white;
+
+            color: var(--brown);
+
+            font-family: var(--main-font);
+
+            font-size: 14px;
+
+            outline: none;
+
+        }
+
+
+        .add-review textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+
+        }
+
+
+        .add-review input:focus,
+        .add-review textarea:focus {
+
+            border: 2px solid var(--yellow);
+
+        }
+
+
+
+        /* ========================================
+           CUTE PHOTO UPLOAD
+           ======================================== */
+
+        .photo-upload-wrapper {
+
+            margin-top: 10px;
+
+        }
+
+
+        .photo-upload {
+
+            width: 100%;
+
+            min-height: 125px;
+
+            padding: 20px;
+
+            border: 2px dashed var(--light-brown);
+
+            border-radius: 18px;
+
+            background-color: var(--soft-pink);
 
             display: flex;
 
             flex-direction: column;
 
             align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
         }
 
 
-        /* =========================
-           MIMI NAME
-           ========================= */
+        .photo-upload:hover {
 
-        .mimi-name {
-            background-color: var(--yellow);
+            background-color: var(--soft-yellow);
 
-            color: var(--brown);
+            transform: translateY(-2px);
 
-            border: 2px solid var(--brown);
+            border-style: solid;
 
-            padding: 6px 15px;
+        }
 
-            margin-bottom: 5px;
 
-            font-family: "Courier New", monospace;
+        .photo-upload:active {
+
+            transform: scale(0.98);
+
+        }
+
+
+        .upload-icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background-color: white;
+
+            border-radius: 50%;
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+
+            box-shadow: 2px 2px 0 var(--brown);
+
+        }
+
+
+        .upload-title {
+
+            font-size: 14px;
 
             font-weight: 900;
 
-            font-size: 18px;
+            margin-bottom: 4px;
 
-            letter-spacing: 2px;
-
-            box-shadow: 3px 3px 0 var(--brown);
         }
 
 
-        /* =========================
-           CHAT BUBBLE
-           ========================= */
+        .upload-subtitle {
 
-        .mimi-chat {
+            font-size: 12px;
+
+            color: var(--light-brown);
+
+        }
+
+
+        #reviewPhoto {
+
+            display: none;
+
+        }
+
+
+
+        /* ========================================
+           PHOTO PREVIEW
+           ======================================== */
+
+        .photo-preview-wrapper {
+
+            display: none;
+
+            position: relative;
+
+            width: 100%;
+
+            margin-top: 12px;
+
+            padding: 10px;
+
+            background-color: var(--soft-yellow);
+
+            border-radius: 15px;
+
+            border: 2px solid #F3E9C5;
+
+        }
+
+
+        .photo-preview-wrapper.show {
+
+            display: block;
+
+        }
+
+
+        .photo-preview {
+
+            width: 100%;
+
+            max-height: 220px;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            display: block;
+
+            background-color: white;
+
+        }
+
+
+        .remove-photo {
+
+            width: 32px;
+
+            height: 32px;
+
             position: absolute;
 
-            right: 125px;
-            bottom: 110px;
+            top: -8px;
 
-            width: 245px;
+            right: -8px;
 
-            padding: 16px 18px;
+            border: 2px solid var(--brown);
 
-            background-color: var(--cream);
+            border-radius: 50%;
+
+            background-color: white;
 
             color: var(--brown);
 
-            border: 3px solid var(--brown);
+            font-size: 16px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .remove-photo:hover {
+
+            background-color: var(--yellow);
+
+        }
+
+
+        .photo-note {
+
+            margin-top: 7px;
+
+            font-size: 11px;
+
+            color: var(--light-brown);
+
+        }
+
+
+
+        /* ========================================
+           SUBMIT
+           ======================================== */
+
+        .review-submit {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background-color: var(--yellow);
+
+            color: var(--brown);
 
             font-family: var(--main-font);
 
             font-size: 15px;
 
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+
+        }
+
+
+        .review-submit:hover {
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .review-message {
+
+            min-height: 20px;
+
+            margin-top: 12px;
+
+            font-size: 14px;
+
             font-weight: bold;
 
-            line-height: 1.4;
-
-            box-shadow: 5px 5px 0 var(--brown);
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transform: translateY(10px);
-
-            transition: all 0.25s ease;
         }
 
 
-        /* Speech bubble triangle */
 
-        .mimi-chat::after {
-            content: "";
+        /* ========================================
+           MIMI
+           ======================================== */
 
-            position: absolute;
+        .mimi-container {
 
-            right: -14px;
-            bottom: 18px;
+            position: fixed;
 
-            width: 20px;
-            height: 20px;
+            right: 20px;
 
-            background-color: var(--cream);
+            bottom: 20px;
 
-            border-right: 3px solid var(--brown);
-            border-top: 3px solid var(--brown);
+            z-index: 2000;
 
-            transform: rotate(45deg);
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-end;
+
         }
 
 
-        /* SHOW CHAT */
+        .mimi-chat {
 
-        .mimi-container.active .mimi-chat {
-            opacity: 1;
+            background-color: white;
 
-            visibility: visible;
+            color: var(--brown);
 
-            transform: translateY(0);
+            border: 3px solid var(--brown);
+
+            border-radius: 15px;
+
+            padding: 12px 16px;
+
+            margin-bottom: 8px;
+
+            max-width: 220px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            box-shadow: 4px 4px 0 var(--brown);
+
         }
 
-
-        /* =========================
-           CAT BUTTON
-           ========================= */
 
         .mimi-button {
-            width: 140px;
-            height: 140px;
 
             border: none;
 
             background: transparent;
 
+            cursor: pointer;
+
             padding: 0;
 
-            transition: transform 0.25s ease;
-        }
-
-        .mimi-button:hover {
-            transform: translateY(-6px) scale(1.05);
         }
 
 
-        /* =========================
-           CAT IMAGES
-           ========================= */
+        .mimi-button img {
 
-        .mimi-image {
-            width: 100%;
-            height: 100%;
+            width: 90px;
+
+            height: 90px;
 
             object-fit: contain;
 
-            display: block;
-        }
-
-        .mimi-normal {
-            display: block;
-        }
-
-        .mimi-clicked {
-            display: none;
         }
 
 
-        /* When Mimi is clicked */
 
-        .mimi-container.active .mimi-normal {
-            display: none;
-        }
-
-        .mimi-container.active .mimi-clicked {
-            display: block;
-        }
-
-
-        /* =========================
+        /* ========================================
            FOOTER
-           ========================= */
+           ======================================== */
 
         footer {
+
             background-color: var(--brown);
 
             color: var(--cream);
 
             text-align: center;
 
-            padding: 35px 20px;
+            padding: 45px 20px;
 
-            font-size: 14px;
-        }
-
-        footer strong {
-            color: var(--yellow);
         }
 
 
-        /* =========================
+        footer p {
+
+            margin: 7px 0;
+
+        }
+
+
+
+        /* ========================================
            MOBILE
-           ========================= */
+           ======================================== */
 
         @media (max-width: 700px) {
 
             nav {
+
+                height: 60px;
+
                 padding: 0 5%;
+
             }
 
-            .nav-links {
-                gap: 12px;
+
+            nav .nav-logo {
+
+                font-size: 20px;
+
             }
 
-            .nav-links a {
+
+            nav ul {
+
+                gap: 13px;
+
+            }
+
+
+            nav ul li a {
+
                 font-size: 11px;
+
             }
+
+
+
+            /* HERO */
+
+            .hero {
+
+                min-height: auto;
+
+                padding: 110px 7% 70px;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 30px;
+
+            }
+
+
+            .hero-text {
+
+                width: 100%;
+
+            }
+
+
+            .hero-text h1 {
+
+                font-size: clamp(48px, 14vw, 70px);
+
+            }
+
+
+            .hero-text p {
+
+                font-size: 16px;
+
+            }
+
 
             .hero-logo {
-                top: 90px;
-                right: 5%;
 
-                width: 90px;
-                height: 90px;
+                width: 190px;
+
+                max-width: 190px;
+
             }
 
-            .hero-content h1 {
-                font-size: 70px;
 
-                letter-spacing: -3px;
+
+            /* ABOUT */
+
+            .about {
+
+                padding: 70px 7%;
+
             }
 
-            .hero-content p {
+
+            .about h2 {
+
+                font-size: 35px;
+
+            }
+
+
+            .about p {
+
                 font-size: 15px;
+
             }
+
+
+
+            /* MENU */
+
+            .menu {
+
+                padding: 70px 6%;
+
+            }
+
+
+            .menu h2 {
+
+                font-size: 35px;
+
+            }
+
 
             .thumbnails {
+
                 flex-direction: column;
+
+                align-items: center;
+
+                gap: 30px;
+
             }
+
 
             .thumbnail {
-                width: 280px;
-                height: 280px;
+
+                width: 100%;
+
+                max-width: 350px;
+
             }
+
+
+
+            /* REVIEWS */
+
+            .customer-reviews {
+
+                padding: 55px 6%;
+
+            }
+
+
+            .storage-reminder {
+
+                padding: 18px 15px;
+
+                margin-bottom: 45px;
+
+                box-shadow: 3px 3px 0 var(--brown);
+
+            }
+
+
+            .storage-reminder strong {
+
+                font-size: 15px;
+
+            }
+
+
+            .storage-reminder p {
+
+                font-size: 13px;
+
+            }
+
+
+            .rating-summary {
+
+                flex-direction: column;
+
+                gap: 30px;
+
+                margin-bottom: 50px;
+
+            }
+
+
+            .rating-bars {
+
+                width: 100%;
+
+            }
+
+
+            .rating-row {
+
+                gap: 7px;
+
+                font-size: 12px;
+
+            }
+
+
+            .rating-row > span:first-child {
+
+                width: 38px;
+
+            }
+
+
+            .rating-line {
+
+                height: 7px;
+
+            }
+
+
+            .overall-rating {
+
+                width: 100%;
+
+                min-width: 0;
+
+            }
+
+
+            .reviews-content {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+            }
+
+
+            .recent-feedbacks h2,
+            .add-review h2 {
+
+                font-size: 25px;
+
+            }
+
+
+            .review-item {
+
+                padding: 17px;
+
+            }
+
+
+            .review-item-name {
+
+                font-size: 17px;
+
+            }
+
+
+            .review-item-text {
+
+                font-size: 13px;
+
+            }
+
+
+            .review-photo {
+
+                max-width: 100%;
+
+                max-height: 240px;
+
+            }
+
+
+            .big-stars {
+
+                font-size: 24px;
+
+            }
+
+
+
+            /* PHOTO UPLOAD */
+
+            .photo-upload {
+
+                min-height: 115px;
+
+                padding: 16px;
+
+            }
+
+
+            .upload-icon {
+
+                width: 43px;
+
+                height: 43px;
+
+                font-size: 22px;
+
+            }
+
+
+            .upload-title {
+
+                font-size: 13px;
+
+            }
+
+
+            .upload-subtitle {
+
+                font-size: 11px;
+
+            }
+
+
+            .photo-preview {
+
+                max-height: 200px;
+
+            }
+
+
+            .review-submit {
+
+                min-height: 48px;
+
+                font-size: 14px;
+
+            }
+
+
+
+            /* MIMI */
 
             .mimi-container {
+
                 right: 10px;
+
                 bottom: 10px;
+
             }
 
-            .mimi-button {
-                width: 110px;
-                height: 110px;
+
+            .mimi-button img {
+
+                width: 75px;
+
+                height: 75px;
+
             }
+
 
             .mimi-chat {
-                right: 90px;
-                bottom: 90px;
 
-                width: 210px;
+                max-width: 190px;
+
+                font-size: 12px;
+
+            }
+
+        }
+
+
+
+        /* ========================================
+           VERY SMALL PHONES
+           ======================================== */
+
+        @media (max-width: 400px) {
+
+            nav ul {
+
+                gap: 8px;
+
+            }
+
+
+            nav ul li a {
+
+                font-size: 9px;
+
+            }
+
+
+            nav .nav-logo {
+
+                font-size: 18px;
+
+            }
+
+
+            .hero-text h1 {
+
+                font-size: 46px;
+
+            }
+
+
+            .rating-row {
+
+                font-size: 11px;
+
+            }
+
+
+            .rating-row > span:first-child {
+
+                width: 32px;
+
             }
 
         }
@@ -672,17 +1725,21 @@
 <body>
 
 
-    <!-- =========================
-         NAVIGATION
-         ========================= -->
+    <!-- ========================================
+         NAVBAR
+         ======================================== -->
 
     <nav>
 
-        <div class="nav-logo">
+        <a
+            href="#home"
+            class="nav-logo"
+        >
             YOGUMI
-        </div>
+        </a>
 
-        <ul class="nav-links">
+
+        <ul>
 
             <li>
                 <a href="#home">
@@ -713,38 +1770,154 @@
     </nav>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          HERO
-         ========================= -->
+         ======================================== -->
 
-    <section class="hero" id="home">
+    <section
+        class="hero"
+        id="home"
+    >
 
-
-        <!-- YOGUMI LOGO -->
-
-        <div class="hero-logo">
-
-            <img
-                src="newlogo.png"
-                alt="Yogumi Logo"
-            >
-        </div>
-
-
-        <!-- HERO TEXT -->
-
-        <div class="hero-content">
+        <div class="hero-text">
 
             <h1>
-                YOGUMI
+                CHEESECAKE
             </h1>
+
 
             <p>
                 One scoop, instant yum!
             </p>
 
-            <a href="#menu" class="order-button">
+
+            <a
+                href="#menu"
+                class="order-button"
+            >
                 ORDER NOW
+            </a>
+
+        </div>
+
+
+        <img
+            src="newlogo.png"
+            alt="Yogumi Logo"
+            class="hero-logo"
+        >
+
+    </section>
+
+
+
+    <!-- ========================================
+         ABOUT
+         ======================================== -->
+
+    <section
+        class="about"
+        id="about"
+    >
+
+        <h2>
+            SWEET. CREAMY. YUMMY.
+        </h2>
+
+
+        <p>
+            Welcome to Yogumi! We make delicious,
+            creamy cheesecake with flavors made
+            to satisfy your sweet cravings.
+            Choose your favorite flavor and
+            enjoy your little piece of happiness.
+        </p>
+
+    </section>
+
+
+
+    <!-- ========================================
+         CHEESECAKE MENU
+         ======================================== -->
+
+    <section
+        class="menu"
+        id="menu"
+    >
+
+        <h2>
+            OUR CHEESECAKES
+        </h2>
+
+
+        <p class="menu-subtitle">
+            Pick your favorite!
+        </p>
+
+
+        <div class="thumbnails">
+
+
+            <!-- BISCOFF -->
+
+            <a
+                href="cheesecake1.html"
+                class="thumbnail"
+            >
+
+                <img
+                    src="biscoff.jpeg"
+                    alt="Biscoff Cheesecake"
+                >
+
+
+                <div class="thumbnail-info">
+
+                    <h3>
+                        Biscoff Bliss
+                    </h3>
+
+
+                    <p>
+                        Creamy cheesecake with
+                        delicious Biscoff goodness.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- OREO -->
+
+            <a
+                href="cheesecake2.html"
+                class="thumbnail"
+            >
+
+                <img
+                    src="oreo.jpeg"
+                    alt="Oreo Cheesecake"
+                >
+
+
+                <div class="thumbnail-info">
+
+                    <h3>
+                        Oreo Dream
+                    </h3>
+
+
+                    <p>
+                        A creamy cheesecake packed
+                        with Oreo goodness.
+                    </p>
+
+                </div>
+
             </a>
 
         </div>
@@ -752,160 +1925,478 @@
     </section>
 
 
-    <!-- =========================
-         ABOUT
-         ========================= -->
 
-    <section class="intro" id="about">
+    <!-- ========================================
+         CUSTOMER REVIEWS
+         ======================================== -->
 
-        <div class="intro-content">
+    <section
+        class="customer-reviews"
+        id="reviews"
+    >
 
-            <h2>
-                SWEET. CREAMY. YUMMY.
-            </h2>
+
+        <!-- STORAGE REMINDER -->
+
+        <div class="storage-reminder">
+
+            <div class="reminder-icon">
+                🧊🍰
+            </div>
+
+            <strong>
+                Friendly Reminder!
+            </strong>
 
             <p>
-                Welcome to Yogumi! We make delicious cheesecake
-                with lots of love and a little help from our
-                adorable mimi. Find your favorite flavor
-                and enjoy a little piece of happiness!
+                Please keep your cake stored in a cool temperature!
+                It is best enjoyed when served cold.
             </p>
 
         </div>
 
-    </section>
 
 
-    <!-- =========================
-         CHEESECAKE MENU
-         ========================= -->
+        <!-- RATING SUMMARY -->
 
-    <section class="thumbnails" id="menu">
+        <div class="rating-summary">
 
 
-        <!-- CHEESECAKE 1 -->
+            <!-- STAR BREAKDOWN -->
 
-        <a
-            href="cheesecake1.html"
-            class="thumbnail"
-        >
+            <div class="rating-bars">
 
-            <img
-                src="biscoff.jpeg"
-                alt="Yogumi Cheesecake 1"
-            >
 
-            <div class="thumbnail-overlay">
+                <div class="rating-row">
 
-                <span>
-                    VIEW CHEESECAKE 🐾
-                </span>
+                    <span>
+                        FIVE
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="fiveBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="fiveCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        FOUR
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="fourBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="fourCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        THREE
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="threeBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="threeCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        TWO
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="twoBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="twoCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="rating-row">
+
+                    <span>
+                        ONE
+                    </span>
+
+                    <span class="star-small">
+                        ★
+                    </span>
+
+                    <div class="rating-line">
+                        <div id="oneBar"></div>
+                    </div>
+
+                    <span
+                        class="rating-count"
+                        id="oneCount"
+                    >
+                        0
+                    </span>
+
+                </div>
 
             </div>
 
-        </a>
 
 
-        <!-- CHEESECAKE 2 -->
+            <!-- OVERALL RATING -->
 
-        <a
-            href="cheesecake2.html"
-            class="thumbnail"
-        >
+            <div class="overall-rating">
 
-            <img
-                src="oreo.jpeg"
-                alt="Yogumi Cheesecake 2"
-            >
+                <div
+                    class="average-number"
+                    id="averageRating"
+                >
+                    0.0
+                </div>
 
-            <div class="thumbnail-overlay">
 
-                <span>
-                    VIEW CHEESECAKE 🐾
-                </span>
+                <div class="big-stars">
+                    ★★★★★
+                </div>
+
+
+                <div class="rating-total">
+
+                    <span id="totalRatings">
+                        0
+                    </span>
+
+                    Ratings
+
+                </div>
 
             </div>
 
-        </a>
-
-
-    </section>
-
-
-    <!-- =========================
-         YOGUMI CAT MASCOT
-         ========================= -->
-
-    <div
-        class="mimi-container"
-        id="mimi"
-    >
-
-
-        <!-- NAME -->
-
-        <div class="mimi-name">
-            MIMI
         </div>
 
 
-        <!-- CHAT -->
+
+        <!-- REVIEWS + FORM -->
+
+        <div class="reviews-content">
+
+
+            <!-- RECENT FEEDBACKS -->
+
+            <div class="recent-feedbacks">
+
+                <h2>
+                    Recent Feedbacks
+                </h2>
+
+
+                <div id="reviewsList">
+
+                    <p class="no-reviews">
+                        No reviews yet.
+                        Be the first to review Yogumi!
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ADD REVIEW -->
+
+            <div class="add-review">
+
+                <h2>
+                    Add a Review
+                </h2>
+
+
+                <form id="reviewForm">
+
+
+                    <!-- RATING -->
+
+                    <label>
+                        Add Your Rating *
+                    </label>
+
+
+                    <div
+                        class="form-stars"
+                        id="formStars"
+                    >
+
+                        <button
+                            type="button"
+                            data-rating="1"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="2"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="3"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="4"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="5"
+                        >
+                            ★
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- NAME -->
+
+                    <label for="customerName">
+                        Name *
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Your name"
+                        maxlength="50"
+                        required
+                    >
+
+
+
+                    <!-- REVIEW -->
+
+                    <label for="customerReview">
+                        Write Your Review *
+                    </label>
+
+
+                    <textarea
+                        id="customerReview"
+                        placeholder="Write your review..."
+                        maxlength="500"
+                        required
+                    ></textarea>
+
+
+
+                    <!-- PHOTO -->
+
+                    <label>
+                        Add a Photo ♡
+                    </label>
+
+
+                    <div class="photo-upload-wrapper">
+
+                        <label
+                            for="reviewPhoto"
+                            class="photo-upload"
+                        >
+
+                            <div class="upload-icon">
+                                📸
+                            </div>
+
+
+                            <div class="upload-title">
+                                Show us your cheesecake!
+                            </div>
+
+
+                            <div class="upload-subtitle">
+                                Tap to add a JPG or PNG photo ♡
+                            </div>
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="reviewPhoto"
+                            accept="image/jpeg,image/png"
+                        >
+
+
+                        <!-- PHOTO PREVIEW -->
+
+                        <div
+                            class="photo-preview-wrapper"
+                            id="photoPreviewWrapper"
+                        >
+
+                            <img
+                                id="photoPreview"
+                                class="photo-preview"
+                                alt="Review photo preview"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="remove-photo"
+                                id="removePhoto"
+                                aria-label="Remove photo"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+
+                        <p class="photo-note">
+                            JPG or PNG only • Maximum 2 MB
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="review-submit"
+                    >
+                        Submit Review ♡
+                    </button>
+
+
+                    <p
+                        class="review-message"
+                        id="reviewMessage"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         MIMI
+         ======================================== -->
+
+    <div class="mimi-container">
+
 
         <div
             class="mimi-chat"
             id="mimiChat"
+            style="display: none;"
         >
             Pssttt... wants some cheesecake?
         </div>
 
 
-        <!-- CAT -->
-
         <button
             class="mimi-button"
-            onclick="toggleMimi()"
-            aria-label="Talk to Mimi"
+            id="mimiButton"
+            type="button"
         >
 
-
-            <!-- NORMAL IMAGE -->
-
             <img
-                class="mimi-image mimi-normal"
                 src="catclose.png"
+                id="mimiImage"
                 alt="Mimi"
             >
-
-
-            <!-- CLICKED IMAGE -->
-
-            <img
-                class="mimi-image mimi-clicked"
-                src="catopen.png"
-                alt="Mimi"
-            >
-
 
         </button>
 
     </div>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          FOOTER
-         ========================= -->
+         ======================================== -->
 
     <footer id="contact">
 
         <p>
-            <strong>YOGUMI</strong>
+            <strong>
+                YOGUMI
+            </strong>
         </p>
+
 
         <p>
             Made with love and cheesecake
         </p>
 
+
         <br>
+
 
         <p>
             © 2026 Yogumi. All rights reserved.
@@ -914,164 +2405,1005 @@
     </footer>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          JAVASCRIPT
-         ========================= -->
+         ======================================== -->
 
     <script>
 
 
-        /* =========================
-           MIMI RANDOM DIALOGUES
-           ========================= */
+        /* ========================================
+           MIMI
+           ======================================== */
+
+        const mimiButton =
+            document.getElementById(
+                "mimiButton"
+            );
+
+
+        const mimiImage =
+            document.getElementById(
+                "mimiImage"
+            );
+
+
+        const mimiChat =
+            document.getElementById(
+                "mimiChat"
+            );
+
 
         const mimiDialogues = [
 
             "Pssttt... wants some cheesecake?",
 
-            "Hey! Don't forget to try our cheesecake!",
+            "Meow! Pick your favorite!",
 
-            "Mmm... I can smell the cheesecake already!",
+            "Biscoff is calling you...",
 
-            "Which flavor are you choosing?",
+            "Oreo cheesecake sounds yummy!",
 
-            "You came back! I knew you wanted cheesecake!",
+            "Don't forget to treat yourself!",
 
-            "Careful... one slice might not be enough!",
+            "Mimi approves of cheesecake!",
 
-            "Welcome to Yogumi!",
+            "One cheesecake, please!",
 
-            "Cheesecake makes everything better!",
-
-            "Have you checked out our menu yet?",
-
-            "Psst... I think you should order one.",
-
-            "I'm watching you... choose the cheesecake.",
-
-            "Yogumi says: treat yourself today!",
-
-            "One cheesecake, please! Actually... make it two.",
-
-            "Don't leave without trying something yummy!",
-
-            "Meow! Cheesecake time!",
-
-            "meow"
+            "Psst... I smell cheesecake!"
 
         ];
 
 
-        /* =========================
-           MIMI CLICK
-           ========================= */
-
-        function toggleMimi() {
-
-            const mimi =
-                document.getElementById("mimi");
-
-            const chat =
-                document.getElementById("mimiChat");
+        let mimiOpen = false;
 
 
-            mimi.classList.toggle("active");
+        mimiButton.addEventListener(
+            "click",
+            function() {
+
+                mimiOpen =
+                    !mimiOpen;
 
 
-            /* Only choose a dialogue when opening */
+                if (mimiOpen) {
 
-            if (mimi.classList.contains("active")) {
-
-                const randomIndex =
-                    Math.floor(
-                        Math.random() *
-                        mimiDialogues.length
-                    );
+                    mimiImage.src =
+                        "catopen.png";
 
 
-                chat.textContent =
-                    mimiDialogues[randomIndex];
+                    mimiChat.textContent =
+                        mimiDialogues[
+                            Math.floor(
+                                Math.random() *
+                                mimiDialogues.length
+                            )
+                        ];
+
+
+                    mimiChat.style.display =
+                        "block";
+
+                } else {
+
+                    mimiImage.src =
+                        "catclose.png";
+
+
+                    mimiChat.style.display =
+                        "none";
+
+                }
 
             }
+        );
 
-        }
 
 
-        /* =========================
-           CHEESECAKE PAW CLICK
-           ========================= */
+        /* ========================================
+           PAW CLICK EFFECT
+           ======================================== */
 
         document
             .querySelectorAll(".thumbnail")
-            .forEach(function(card) {
+            .forEach(
+                function(thumbnail) {
+
+                    thumbnail.addEventListener(
+                        "click",
+                        function() {
+
+                            this.style.transform =
+                                "scale(0.96)";
+
+                            setTimeout(
+                                () => {
+
+                                    this.style.transform =
+                                        "";
+
+                                },
+                                150
+                            );
+
+                        }
+                    );
+
+                }
+            );
 
 
-                card.addEventListener(
+
+        /* ========================================
+           REVIEW SYSTEM
+           ======================================== */
+
+        let reviews =
+            JSON.parse(
+                localStorage.getItem(
+                    "yogumiReviews"
+                )
+            ) || [];
+
+
+        let selectedRating = 0;
+
+        let selectedPhoto = "";
+
+
+
+        /* ========================================
+           STAR SELECTION
+           ======================================== */
+
+        const starButtons =
+            document.querySelectorAll(
+                "#formStars button"
+            );
+
+
+        starButtons.forEach(
+            function(button) {
+
+                button.addEventListener(
                     "click",
-                    function(event) {
+                    function() {
+
+                        selectedRating =
+                            Number(
+                                this.dataset.rating
+                            );
 
 
-                        /* Stop page from changing immediately */
+                        starButtons.forEach(
+                            function(star) {
 
-                        event.preventDefault();
-
-
-                        /* Save the destination */
-
-                        const link =
-                            this.href;
+                                const rating =
+                                    Number(
+                                        star.dataset.rating
+                                    );
 
 
-                        /* Create paw */
+                                if (
+                                    rating <=
+                                    selectedRating
+                                ) {
 
-                        const paw =
-                            document.createElement("div");
+                                    star.classList.add(
+                                        "selected"
+                                    );
 
+                                } else {
 
-                        paw.className =
-                            "paw-click";
+                                    star.classList.remove(
+                                        "selected"
+                                    );
 
+                                }
 
-                        paw.textContent =
-                            "🐾";
-
-
-                        /* Put paw exactly where clicked */
-
-                        paw.style.left =
-                            event.clientX + "px";
-
-                        paw.style.top =
-                            event.clientY + "px";
-
-
-                        /* Add paw to page */
-
-                        document.body.appendChild(paw);
-
-
-                        /* Go to cheesecake page */
-
-                        setTimeout(
-                            function() {
-
-                                window.location.href =
-                                    link;
-
-                            },
-                            400
+                            }
                         );
 
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ========================================
+           PHOTO UPLOAD
+           ======================================== */
+
+        const reviewPhoto =
+            document.getElementById(
+                "reviewPhoto"
+            );
+
+
+        const photoPreview =
+            document.getElementById(
+                "photoPreview"
+            );
+
+
+        const photoPreviewWrapper =
+            document.getElementById(
+                "photoPreviewWrapper"
+            );
+
+
+        const removePhoto =
+            document.getElementById(
+                "removePhoto"
+            );
+
+
+
+        reviewPhoto.addEventListener(
+            "change",
+            function() {
+
+                const file =
+                    this.files[0];
+
+
+                if (!file) {
+
+                    return;
+
+                }
+
+
+                /* Check file type */
+
+                const allowedTypes = [
+                    "image/jpeg",
+                    "image/png"
+                ];
+
+
+                if (
+                    !allowedTypes.includes(
+                        file.type
+                    )
+                ) {
+
+                    alert(
+                        "Please choose a JPG or PNG image."
+                    );
+
+                    this.value = "";
+
+                    return;
+
+                }
+
+
+
+                /* Check file size */
+
+                const maxSize =
+                    2 * 1024 * 1024;
+
+
+                if (
+                    file.size >
+                    maxSize
+                ) {
+
+                    alert(
+                        "Please choose a photo smaller than 2 MB."
+                    );
+
+                    this.value = "";
+
+                    return;
+
+                }
+
+
+
+                /* Read photo */
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(event) {
+
+                        selectedPhoto =
+                            event.target.result;
+
+
+                        photoPreview.src =
+                            selectedPhoto;
+
+
+                        photoPreviewWrapper.classList.add(
+                            "show"
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(
+                    file
+                );
+
+            }
+        );
+
+
+
+        /* ========================================
+           REMOVE PHOTO
+           ======================================== */
+
+        removePhoto.addEventListener(
+            "click",
+            function() {
+
+                selectedPhoto = "";
+
+                reviewPhoto.value = "";
+
+                photoPreview.src = "";
+
+                photoPreviewWrapper.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* ========================================
+           DISPLAY REVIEWS
+           ======================================== */
+
+        function displayReviews() {
+
+            const reviewsList =
+                document.getElementById(
+                    "reviewsList"
+                );
+
+
+            if (
+                reviews.length === 0
+            ) {
+
+                reviewsList.innerHTML = `
+
+                    <p class="no-reviews">
+
+                        No reviews yet.
+                        Be the first to review Yogumi!
+
+                    </p>
+
+                `;
+
+
+                updateRatingSummary();
+
+                return;
+
+            }
+
+
+            reviewsList.innerHTML = "";
+
+
+            /*
+             * Newest reviews appear first.
+             */
+
+            reviews
+                .slice()
+                .reverse()
+                .forEach(
+                    function(review) {
+
+
+                        const reviewItem =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        reviewItem.className =
+                            "review-item";
+
+
+
+                        /* NAME */
+
+                        const name =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        name.className =
+                            "review-item-name";
+
+
+                        name.textContent =
+                            review.name;
+
+
+
+                        /* STARS */
+
+                        const stars =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        stars.className =
+                            "review-item-stars";
+
+
+                        stars.textContent =
+                            "★".repeat(
+                                review.rating
+                            ) +
+                            "☆".repeat(
+                                5 -
+                                review.rating
+                            );
+
+
+
+                        /* COMMENT */
+
+                        const text =
+                            document.createElement(
+                                "p"
+                            );
+
+
+                        text.className =
+                            "review-item-text";
+
+
+                        text.textContent =
+                            review.comment;
+
+
+
+                        /* BUILD CARD */
+
+                        reviewItem.appendChild(
+                            name
+                        );
+
+
+                        reviewItem.appendChild(
+                            stars
+                        );
+
+
+                        reviewItem.appendChild(
+                            text
+                        );
+
+
+
+                        /* PHOTO */
+
+                        if (
+                            review.photo
+                        ) {
+
+                            const photo =
+                                document.createElement(
+                                    "img"
+                                );
+
+
+                            photo.className =
+                                "review-photo";
+
+
+                            photo.src =
+                                review.photo;
+
+
+                            photo.alt =
+                                "Customer cheesecake photo";
+
+
+                            /*
+                             * Clicking the photo
+                             * opens it in a new tab.
+                             */
+
+                            photo.addEventListener(
+                                "click",
+                                function() {
+
+                                    const newWindow =
+                                        window.open();
+
+                                    if (newWindow) {
+
+                                        newWindow.document.write(
+                                            `<img src="${review.photo}" style="max-width:100%;height:auto;">`
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+
+                            reviewItem.appendChild(
+                                photo
+                            );
+
+                        }
+
+
+
+                        /* ADD CARD */
+
+                        reviewsList.appendChild(
+                            reviewItem
+                        );
 
                     }
                 );
 
 
-            });
+            updateRatingSummary();
 
+        }
+
+
+
+        /* ========================================
+           RATING SUMMARY
+           ======================================== */
+
+        function updateRatingSummary() {
+
+            const total =
+                reviews.length;
+
+
+            document.getElementById(
+                "totalRatings"
+            ).textContent =
+                total;
+
+
+            if (
+                total === 0
+            ) {
+
+                document.getElementById(
+                    "averageRating"
+                ).textContent =
+                    "0.0";
+
+
+                setRatingBar(
+                    1,
+                    0
+                );
+
+                setRatingBar(
+                    2,
+                    0
+                );
+
+                setRatingBar(
+                    3,
+                    0
+                );
+
+                setRatingBar(
+                    4,
+                    0
+                );
+
+                setRatingBar(
+                    5,
+                    0
+                );
+
+                return;
+
+            }
+
+
+            const counts = {
+
+                1: 0,
+
+                2: 0,
+
+                3: 0,
+
+                4: 0,
+
+                5: 0
+
+            };
+
+
+            let totalScore = 0;
+
+
+            reviews.forEach(
+                function(review) {
+
+                    counts[
+                        review.rating
+                    ]++;
+
+
+                    totalScore +=
+                        review.rating;
+
+                }
+            );
+
+
+            const average =
+                totalScore /
+                total;
+
+
+            document.getElementById(
+                "averageRating"
+            ).textContent =
+                average.toFixed(1);
+
+
+            setRatingBar(
+                1,
+                counts[1]
+            );
+
+            setRatingBar(
+                2,
+                counts[2]
+            );
+
+            setRatingBar(
+                3,
+                counts[3]
+            );
+
+            setRatingBar(
+                4,
+                counts[4]
+            );
+
+            setRatingBar(
+                5,
+                counts[5]
+            );
+
+        }
+
+
+
+        /* ========================================
+           INDIVIDUAL RATING BAR
+           ======================================== */
+
+        function setRatingBar(
+            rating,
+            count
+        ) {
+
+            const names = {
+
+                1: "one",
+
+                2: "two",
+
+                3: "three",
+
+                4: "four",
+
+                5: "five"
+
+            };
+
+
+            const name =
+                names[rating];
+
+
+            document.getElementById(
+                name + "Count"
+            ).textContent =
+                count;
+
+
+            const total =
+                reviews.length;
+
+
+            let percentage = 0;
+
+
+            if (
+                total > 0
+            ) {
+
+                percentage =
+                    (
+                        count /
+                        total
+                    ) *
+                    100;
+
+            }
+
+
+            document.getElementById(
+                name + "Bar"
+            ).style.width =
+                percentage + "%";
+
+        }
+
+
+
+        /* ========================================
+           SUBMIT REVIEW
+           ======================================== */
+
+        document
+            .getElementById(
+                "reviewForm"
+            )
+            .addEventListener(
+                "submit",
+                function(event) {
+
+                    event.preventDefault();
+
+
+                    const nameInput =
+                        document.getElementById(
+                            "customerName"
+                        );
+
+
+                    const reviewInput =
+                        document.getElementById(
+                            "customerReview"
+                        );
+
+
+                    const message =
+                        document.getElementById(
+                            "reviewMessage"
+                        );
+
+
+                    const name =
+                        nameInput.value.trim();
+
+
+                    const comment =
+                        reviewInput.value.trim();
+
+
+
+                    /* CHECK RATING */
+
+                    if (
+                        selectedRating === 0
+                    ) {
+
+                        message.textContent =
+                            "Please choose a rating.";
+
+                        return;
+
+                    }
+
+
+
+                    /* CHECK NAME */
+
+                    if (
+                        !name
+                    ) {
+
+                        message.textContent =
+                            "Please enter your name.";
+
+                        return;
+
+                    }
+
+
+
+                    /* CHECK COMMENT */
+
+                    if (
+                        !comment
+                    ) {
+
+                        message.textContent =
+                            "Please write a review.";
+
+                        return;
+
+                    }
+
+
+
+                    /* CREATE REVIEW */
+
+                    const newReview = {
+
+                        name:
+                            name,
+
+                        rating:
+                            selectedRating,
+
+                        comment:
+                            comment,
+
+                        photo:
+                            selectedPhoto
+
+                    };
+
+
+
+                    /* ADD REVIEW */
+
+                    reviews.push(
+                        newReview
+                    );
+
+
+
+                    /* SAVE */
+
+                    try {
+
+                        localStorage.setItem(
+                            "yogumiReviews",
+                            JSON.stringify(
+                                reviews
+                            )
+                        );
+
+                    } catch (error) {
+
+                        /*
+                         * If browser storage is full,
+                         * remove the photo from this review
+                         * rather than breaking the review system.
+                         */
+
+                        newReview.photo = "";
+
+                        try {
+
+                            localStorage.setItem(
+                                "yogumiReviews",
+                                JSON.stringify(
+                                    reviews
+                                )
+                            );
+
+                            message.textContent =
+                                "Review submitted, but the photo could not be saved because browser storage is full.";
+
+                        } catch (storageError) {
+
+                            reviews.pop();
+
+                            message.textContent =
+                                "Sorry, this review could not be saved. Please try again.";
+
+                            return;
+
+                        }
+
+                    }
+
+
+
+                    /* DISPLAY */
+
+                    displayReviews();
+
+
+
+                    /* CLEAR FORM */
+
+                    nameInput.value =
+                        "";
+
+                    reviewInput.value =
+                        "";
+
+
+
+                    /* CLEAR PHOTO */
+
+                    selectedPhoto =
+                        "";
+
+                    reviewPhoto.value =
+                        "";
+
+                    photoPreview.src =
+                        "";
+
+                    photoPreviewWrapper.classList.remove(
+                        "show"
+                    );
+
+
+
+                    /* RESET STARS */
+
+                    selectedRating =
+                        0;
+
+
+                    starButtons.forEach(
+                        function(star) {
+
+                            star.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+
+                    /* SUCCESS */
+
+                    message.textContent =
+                        "Review submitted! ♡";
+
+
+                    setTimeout(
+                        function() {
+
+                            message.textContent =
+                                "";
+
+                        },
+                        2500
+                    );
+
+                }
+            );
+
+
+
+        /* ========================================
+           LOAD SAVED REVIEWS
+           ======================================== */
+
+        displayReviews();
 
     </script>
-
 
 </body>
 

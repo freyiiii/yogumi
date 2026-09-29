@@ -36,22 +36,29 @@
         ========================= */
 
         nav {
-            height: 75px;
+            min-height: 75px;
             background: var(--yellow);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 6%;
+            padding: 12px 6%;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 3px 10px rgba(90, 54, 40, 0.12);
+            gap: 15px;
         }
 
         .logo {
             font-size: 28px;
             font-weight: 900;
             letter-spacing: 2px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
 
         .back {
@@ -63,6 +70,41 @@
 
         .back:hover {
             text-decoration: underline;
+        }
+
+        /* =========================
+           LANGUAGE SWITCHER
+        ========================= */
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 250, 235, 0.7);
+            border: 2px solid var(--brown);
+            border-radius: 30px;
+            padding: 4px;
+        }
+
+        .language-switcher button {
+            border: none;
+            background: transparent;
+            color: var(--brown);
+            font-weight: bold;
+            font-size: 12px;
+            padding: 7px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .language-switcher button.active {
+            background: var(--brown);
+            color: white;
+        }
+
+        .language-switcher button:hover {
+            transform: scale(1.03);
         }
 
         /* =========================
@@ -430,7 +472,7 @@
             }
 
             nav {
-                padding: 0 5%;
+                padding: 10px 5%;
             }
 
             .logo {
@@ -440,20 +482,38 @@
             .back {
                 font-size: 13px;
             }
+
+            .nav-right {
+                gap: 10px;
+            }
         }
 
         @media (max-width: 500px) {
 
             nav {
-                height: 65px;
+                min-height: 65px;
+                padding: 8px 4%;
             }
 
             .logo {
-                font-size: 21px;
+                font-size: 20px;
             }
 
             .back {
-                font-size: 11px;
+                font-size: 10px;
+            }
+
+            .nav-right {
+                gap: 6px;
+            }
+
+            .language-switcher {
+                padding: 3px;
+            }
+
+            .language-switcher button {
+                font-size: 10px;
+                padding: 6px 7px;
             }
 
             .order-page {
@@ -495,7 +555,9 @@
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <nav>
 
@@ -503,23 +565,40 @@
             YOGUMI
         </div>
 
-        <a href="index.html" class="back">
-            ← BACK TO MENU
-        </a>
+        <div class="nav-right">
+
+            <a href="index.html" class="back" id="backLink">
+                ← BACK TO MENU
+            </a>
+
+            <div class="language-switcher">
+
+                <button id="engButton" onclick="setLanguage('en')">
+                    🇬🇧 ENG
+                </button>
+
+                <button id="idButton" onclick="setLanguage('id')">
+                    🇮🇩 ID
+                </button>
+
+            </div>
+
+        </div>
 
     </nav>
 
 
-    <!-- MAIN -->
+    <!-- =========================
+         MAIN
+    ========================= -->
 
     <main class="order-page">
-
 
         <!-- MIMI LEFT -->
 
         <section class="mimi-section">
 
-            <div class="mimi-title">
+            <div class="mimi-title" id="mimiTitle">
                 Mimi is baking your cheesecake
             </div>
 
@@ -527,11 +606,12 @@
 
                 <img
                     src="baker.png"
+                    id="mimiImage"
                     alt="Mimi baking cheesecake">
 
             </div>
 
-            <div class="mimi-text">
+            <div class="mimi-text" id="mimiText">
                 "Make it as sweet as you like!" 🍯
             </div>
 
@@ -546,7 +626,7 @@
                 Oreo Overload
             </h1>
 
-            <p class="subtitle">
+            <p class="subtitle" id="subtitle">
                 Customize your cheesecake before ordering!
             </p>
 
@@ -555,7 +635,7 @@
 
             <div class="input-group">
 
-                <label for="customerName">
+                <label for="customerName" id="nameLabel">
                     Your Name
                 </label>
 
@@ -571,13 +651,13 @@
 
             <div class="input-group">
 
-                <label for="customerClass">
+                <label for="customerClass" id="classLabel">
                     Your Class
                 </label>
 
                 <select id="customerClass">
 
-                    <option value="">
+                    <option value="" id="classPlaceholder">
                         Select your class
                     </option>
 
@@ -614,7 +694,7 @@
 
             <div class="honey-section">
 
-                <label for="honeySlider">
+                <label for="honeySlider" id="honeyLabel">
 
                     🍯 Honey Level:
 
@@ -649,7 +729,7 @@
 
             <div class="crumble-section">
 
-                <div class="crumble-title">
+                <div class="crumble-title" id="crumbleTitle">
                     🍪 Extra Crumble
                 </div>
 
@@ -660,7 +740,9 @@
                         name="crumble"
                         value="2000">
 
-                    Yes (+Rp2.000)
+                    <span id="yesCrumble">
+                        Yes (+Rp2.000)
+                    </span>
 
                 </label>
 
@@ -672,7 +754,9 @@
                         value="0"
                         checked>
 
-                    No
+                    <span id="noCrumble">
+                        No
+                    </span>
 
                 </label>
 
@@ -683,7 +767,7 @@
 
             <div class="total-box">
 
-                <span>
+                <span id="totalLabel">
                     Total
                 </span>
 
@@ -709,17 +793,19 @@
     </main>
 
 
-    <!-- POPUP -->
+    <!-- =========================
+         POPUP
+    ========================= -->
 
     <div class="popup" id="popup">
 
         <div class="popup-box">
 
-            <h2>
+            <h2 id="popupTitle">
                 🐾 Ready to order?
             </h2>
 
-            <p>
+            <p id="popupText">
                 You will be directed to WhatsApp to send your
                 <b>order details</b> to Yogumi.
                 <br><br>
@@ -753,44 +839,370 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
-        /* BASE PRICE FOR OREO */
+        /* =========================
+           LANGUAGE SYSTEM
+        ========================= */
+
+        const translations = {
+
+            en: {
+
+                back: "← BACK TO MENU",
+
+                mimiTitle:
+                    "Mimi is baking your cheesecake",
+
+                mimiText:
+                    '"Make it as sweet as you like!" 🍯',
+
+                subtitle:
+                    "Customize your cheesecake before ordering!",
+
+                name:
+                    "Your Name",
+
+                namePlaceholder:
+                    "Enter your name",
+
+                class:
+                    "Your Class",
+
+                classPlaceholder:
+                    "Select your class",
+
+                honey:
+                    "🍯 Honey Level:",
+
+                crumble:
+                    "🍪 Extra Crumble",
+
+                yesCrumble:
+                    "Yes (+Rp2.000)",
+
+                noCrumble:
+                    "No",
+
+                total:
+                    "Total",
+
+                order:
+                    "ORDER 🐾",
+
+                popupTitle:
+                    "🐾 Ready to order?",
+
+                popupText:
+                    'You will be directed to WhatsApp to send your <b>order details</b> to Yogumi.<br><br>After that, Yogumi will send you the payment information.',
+
+                cancel:
+                    "CANCEL",
+
+                whatsapp:
+                    "OPEN WHATSAPP",
+
+                nameAlert:
+                    "Please enter your name first! 🐾",
+
+                classAlert:
+                    "Please select your class first! 🐾",
+
+                crumbleYes:
+                    "Yes (+Rp2.000)",
+
+                crumbleNo:
+                    "No",
+
+                orderMessage:
+                    "Hi Yogumi! I'd like to order this cheesecake. 🍰"
+
+            },
+
+
+            id: {
+
+                back:
+                    "← KEMBALI KE MENU",
+
+                mimiTitle:
+                    "Mimi sedang membuat cheesecake-mu",
+
+                mimiText:
+                    '"Buat semanis yang kamu suka!" 🍯',
+
+                subtitle:
+                    "Customize cheesecake-mu sebelum memesan!",
+
+                name:
+                    "Nama Kamu",
+
+                namePlaceholder:
+                    "Masukkan nama kamu",
+
+                class:
+                    "Kelas Kamu",
+
+                classPlaceholder:
+                    "Pilih kelas kamu",
+
+                honey:
+                    "🍯 Level Madu:",
+
+                crumble:
+                    "🍪 Extra Crumble",
+
+                yesCrumble:
+                    "Ya (+Rp2.000)",
+
+                noCrumble:
+                    "Tidak",
+
+                total:
+                    "Total",
+
+                order:
+                    "PESAN 🐾",
+
+                popupTitle:
+                    "🐾 Siap memesan?",
+
+                popupText:
+                    'Kamu akan diarahkan ke WhatsApp untuk mengirim <b>detail pesananmu</b> ke Yogumi.<br><br>Setelah itu, Yogumi akan mengirimkan informasi pembayaran.',
+
+                cancel:
+                    "BATAL",
+
+                whatsapp:
+                    "BUKA WHATSAPP",
+
+                nameAlert:
+                    "Masukkan nama kamu terlebih dahulu! 🐾",
+
+                classAlert:
+                    "Pilih kelas kamu terlebih dahulu! 🐾",
+
+                crumbleYes:
+                    "Ya (+Rp2.000)",
+
+                crumbleNo:
+                    "Tidak",
+
+                orderMessage:
+                    "Hai Yogumi! Aku mau memesan cheesecake ini. 🍰"
+
+            }
+
+        };
+
+
+        let currentLanguage =
+            localStorage.getItem("yogumiLanguage") || "en";
+
+
+        function setLanguage(language) {
+
+            currentLanguage = language;
+
+            localStorage.setItem(
+                "yogumiLanguage",
+                language
+            );
+
+            const t =
+                translations[language];
+
+            document.documentElement.lang =
+                language;
+
+
+            /* NAVBAR */
+
+            document.getElementById(
+                "backLink"
+            ).textContent = t.back;
+
+
+            /* MIMI */
+
+            document.getElementById(
+                "mimiTitle"
+            ).textContent = t.mimiTitle;
+
+            document.getElementById(
+                "mimiText"
+            ).textContent = t.mimiText;
+
+
+            /* FORM */
+
+            document.getElementById(
+                "subtitle"
+            ).textContent = t.subtitle;
+
+            document.getElementById(
+                "nameLabel"
+            ).textContent = t.name;
+
+            document.getElementById(
+                "customerName"
+            ).placeholder =
+                t.namePlaceholder;
+
+            document.getElementById(
+                "classLabel"
+            ).textContent = t.class;
+
+            document.getElementById(
+                "classPlaceholder"
+            ).textContent =
+                t.classPlaceholder;
+
+
+            /* HONEY */
+
+            document.getElementById(
+                "honeyLabel"
+            ).childNodes[0].textContent =
+                t.honey + " ";
+
+
+            /* CRUMBLE */
+
+            document.getElementById(
+                "crumbleTitle"
+            ).textContent =
+                t.crumble;
+
+            document.getElementById(
+                "yesCrumble"
+            ).textContent =
+                t.yesCrumble;
+
+            document.getElementById(
+                "noCrumble"
+            ).textContent =
+                t.noCrumble;
+
+
+            /* TOTAL */
+
+            document.getElementById(
+                "totalLabel"
+            ).textContent =
+                t.total;
+
+
+            /* ORDER */
+
+            document.getElementById(
+                "orderButton"
+            ).textContent =
+                t.order;
+
+
+            /* POPUP */
+
+            document.getElementById(
+                "popupTitle"
+            ).textContent =
+                t.popupTitle;
+
+            document.getElementById(
+                "popupText"
+            ).innerHTML =
+                t.popupText;
+
+            document.getElementById(
+                "cancelButton"
+            ).textContent =
+                t.cancel;
+
+            document.getElementById(
+                "whatsappButton"
+            ).textContent =
+                t.whatsapp;
+
+
+            /* LANGUAGE BUTTON */
+
+            document.getElementById(
+                "engButton"
+            ).classList.toggle(
+                "active",
+                language === "en"
+            );
+
+            document.getElementById(
+                "idButton"
+            ).classList.toggle(
+                "active",
+                language === "id"
+            );
+
+        }
+
+
+        /* =========================
+           BASE PRICE
+        ========================= */
 
         const basePrice = 18000;
 
 
         const honeySlider =
-            document.getElementById("honeySlider");
+            document.getElementById(
+                "honeySlider"
+            );
 
         const honeyValue =
-            document.getElementById("honeyValue");
+            document.getElementById(
+                "honeyValue"
+            );
 
         const totalPrice =
-            document.getElementById("totalPrice");
+            document.getElementById(
+                "totalPrice"
+            );
 
         const customerName =
-            document.getElementById("customerName");
+            document.getElementById(
+                "customerName"
+            );
 
         const customerClass =
-            document.getElementById("customerClass");
+            document.getElementById(
+                "customerClass"
+            );
 
         const orderButton =
-            document.getElementById("orderButton");
+            document.getElementById(
+                "orderButton"
+            );
 
         const popup =
-            document.getElementById("popup");
+            document.getElementById(
+                "popup"
+            );
 
         const cancelButton =
-            document.getElementById("cancelButton");
+            document.getElementById(
+                "cancelButton"
+            );
 
         const whatsappButton =
-            document.getElementById("whatsappButton");
+            document.getElementById(
+                "whatsappButton"
+            );
 
 
-        /* HONEY STOPS */
+        /* =========================
+           HONEY STOPS
+        ========================= */
 
         const honeyStops = [
             0,
@@ -806,8 +1218,12 @@
             return honeyStops.reduce(
                 function(previous, current) {
 
-                    return Math.abs(current - value) <
-                        Math.abs(previous - value)
+                    return Math.abs(
+                        current - value
+                    ) <
+                    Math.abs(
+                        previous - value
+                    )
                         ? current
                         : previous;
 
@@ -817,7 +1233,9 @@
         }
 
 
-        /* WHILE DRAGGING */
+        /* =========================
+           HONEY SLIDER
+        ========================= */
 
         honeySlider.addEventListener(
             "input",
@@ -835,8 +1253,6 @@
         );
 
 
-        /* WHEN RELEASED */
-
         honeySlider.addEventListener(
             "change",
             function() {
@@ -846,7 +1262,8 @@
                         Number(this.value)
                     );
 
-                this.value = closest;
+                this.value =
+                    closest;
 
                 honeyValue.textContent =
                     closest + "%";
@@ -855,11 +1272,14 @@
         );
 
 
-        /* TOTAL PRICE */
+        /* =========================
+           TOTAL PRICE
+        ========================= */
 
         function updateTotal() {
 
-            let total = basePrice;
+            let total =
+                basePrice;
 
             const selectedCrumble =
                 document.querySelector(
@@ -876,7 +1296,9 @@
 
             totalPrice.textContent =
                 "Rp" +
-                total.toLocaleString("id-ID");
+                total.toLocaleString(
+                    "id-ID"
+                );
 
         }
 
@@ -897,7 +1319,9 @@
             );
 
 
-        /* ORDER */
+        /* =========================
+           ORDER
+        ========================= */
 
         orderButton.addEventListener(
             "click",
@@ -909,11 +1333,16 @@
                 const studentClass =
                     customerClass.value;
 
+                const t =
+                    translations[
+                        currentLanguage
+                    ];
+
 
                 if (name === "") {
 
                     alert(
-                        "Please enter your name first! 🐾"
+                        t.nameAlert
                     );
 
                     customerName.focus();
@@ -925,7 +1354,7 @@
                 if (studentClass === "") {
 
                     alert(
-                        "Please select your class first! 🐾"
+                        t.classAlert
                     );
 
                     customerClass.focus();
@@ -936,7 +1365,9 @@
 
                 const honey =
                     getClosestHoneyStop(
-                        Number(honeySlider.value)
+                        Number(
+                            honeySlider.value
+                        )
                     );
 
 
@@ -948,17 +1379,42 @@
 
                 const crumbleText =
                     crumble.value === "2000"
-                        ? "Yes (+Rp2.000)"
-                        : "No";
+                        ? t.crumbleYes
+                        : t.crumbleNo;
 
 
                 const total =
                     basePrice +
-                    Number(crumble.value);
+                    Number(
+                        crumble.value
+                    );
 
 
-                const message =
-                    `🐾 YOGUMI ORDER 🐾
+                let message;
+
+
+                if (
+                    currentLanguage === "id"
+                ) {
+
+                    message =
+                        `🐾 YOGUMI ORDER 🐾
+
+Nama: ${name}
+Kelas: ${studentClass}
+
+Cheesecake: Oreo Overload
+Level Madu: ${honey}%
+Extra Crumble: ${crumbleText}
+
+Total: Rp${total.toLocaleString("id-ID")}
+
+${t.orderMessage}`;
+
+                } else {
+
+                    message =
+                        `🐾 YOGUMI ORDER 🐾
 
 Name: ${name}
 Class: ${studentClass}
@@ -969,7 +1425,9 @@ Extra Crumble: ${crumbleText}
 
 Total: Rp${total.toLocaleString("id-ID")}
 
-Hi Yogumi! I'd like to order this cheesecake. 🍰`;
+${t.orderMessage}`;
+
+                }
 
 
                 const whatsappNumber =
@@ -980,7 +1438,9 @@ Hi Yogumi! I'd like to order this cheesecake. 🍰`;
                     "https://wa.me/" +
                     whatsappNumber +
                     "?text=" +
-                    encodeURIComponent(message);
+                    encodeURIComponent(
+                        message
+                    );
 
 
                 whatsappButton.href =
@@ -994,31 +1454,48 @@ Hi Yogumi! I'd like to order this cheesecake. 🍰`;
         );
 
 
-        /* CANCEL */
+        /* =========================
+           CANCEL
+        ========================= */
 
         cancelButton.addEventListener(
             "click",
             function() {
 
-                popup.style.display = "none";
+                popup.style.display =
+                    "none";
 
             }
         );
 
 
-        /* CLICK OUTSIDE POPUP */
+        /* =========================
+           CLICK OUTSIDE POPUP
+        ========================= */
 
         popup.addEventListener(
             "click",
             function(event) {
 
-                if (event.target === popup) {
+                if (
+                    event.target === popup
+                ) {
 
-                    popup.style.display = "none";
+                    popup.style.display =
+                        "none";
 
                 }
 
             }
+        );
+
+
+        /* =========================
+           LOAD SAVED LANGUAGE
+        ========================= */
+
+        setLanguage(
+            currentLanguage
         );
 
     </script>

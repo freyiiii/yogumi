@@ -12,13 +12,11 @@
 
     <title>Yogumi - Biscoff Bliss</title>
 
-
     <!-- Cat cursor -->
     <link
         rel="stylesheet"
         href="https://cdn.cursors-4u.net/cursors/animated/pawing-cat-0e49294c-32.css"
     >
-
 
     <style>
 
@@ -32,11 +30,9 @@
             padding: 0;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             font-family: Arial, sans-serif;
@@ -45,9 +41,7 @@
             overflow-x: hidden;
         }
 
-
         :root {
-
             --cream: #FFFAEB;
             --yellow: #FECB0E;
             --brown: #5A3628;
@@ -58,9 +52,7 @@
             --soft-brown: #F3E9C5;
 
             --main-font: Arial, sans-serif;
-
         }
-
 
 
         /* ========================================
@@ -68,12 +60,9 @@
            ======================================== */
 
         nav {
-
             position: fixed;
-
             top: 0;
             left: 0;
-
             width: 100%;
             height: 70px;
 
@@ -84,52 +73,81 @@
             justify-content: space-between;
 
             padding: 0 7%;
-
             z-index: 1000;
-
         }
-
 
         nav .nav-logo {
-
             font-size: 25px;
             font-weight: 900;
-
             color: var(--brown);
-
             text-decoration: none;
-
         }
-
 
         nav ul {
-
             list-style: none;
-
             display: flex;
-            gap: 35px;
+            align-items: center;
+            gap: 30px;
+        }
 
+        nav ul li a {
+            color: var(--brown);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
         }
 
 
-        nav ul li a {
+        /* ========================================
+           LANGUAGE SWITCHER
+           ======================================== */
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+
+            padding: 3px;
+
+            background-color: var(--soft-yellow);
+
+            border: 2px solid var(--brown);
+            border-radius: 25px;
+
+            box-shadow: 3px 3px 0 var(--brown);
+        }
+
+        .language-switcher button {
+            border: none;
+            background: transparent;
 
             color: var(--brown);
 
-            text-decoration: none;
+            padding: 6px 9px;
 
-            font-size: 14px;
+            border-radius: 18px;
+
+            font-family: var(--main-font);
+            font-size: 11px;
             font-weight: 900;
 
+            cursor: pointer;
+
+            transition: 0.2s ease;
         }
 
-
-        nav ul li a:hover {
-
-            text-decoration: underline;
-
+        .language-switcher button:hover {
+            transform: translateY(-1px);
         }
 
+        .language-switcher button.active {
+            background-color: var(--brown);
+            color: var(--cream);
+        }
 
 
         /* ========================================
@@ -137,7 +155,6 @@
            ======================================== */
 
         .hero {
-
             min-height: 100vh;
 
             background-color: var(--cream);
@@ -151,63 +168,42 @@
             padding: 120px 10% 80px;
 
             position: relative;
-
             overflow: hidden;
-
         }
 
-
         .hero-text {
-
             max-width: 560px;
-
             flex: 1;
 
             position: relative;
-
             z-index: 2;
-
         }
 
-
         .hero-text h1 {
-
             font-size: clamp(55px, 8vw, 95px);
-
             line-height: 0.9;
-
             font-weight: 900;
 
             color: var(--brown);
 
             margin-bottom: 25px;
-
         }
-
 
         .hero-text p {
-
             font-size: 18px;
-
             font-weight: bold;
-
             margin-bottom: 30px;
-
         }
 
-
         .order-button {
-
             display: inline-block;
 
             padding: 15px 30px;
 
             background-color: var(--yellow);
-
             color: var(--brown);
 
             text-decoration: none;
-
             font-weight: 900;
 
             border: 3px solid var(--brown);
@@ -215,39 +211,85 @@
             box-shadow: 6px 6px 0 var(--brown);
 
             transition: 0.2s ease;
-
         }
-
 
         .order-button:hover {
-
             transform: translate(3px, 3px);
-
             box-shadow: 3px 3px 0 var(--brown);
-
         }
 
-
-        /* FIXED DESKTOP LOGO SIZE */
-
         .hero-logo {
-
             width: min(300px, 30vw);
-
             max-width: 300px;
-
             height: auto;
 
             flex-shrink: 0;
-
             object-fit: contain;
 
             position: relative;
-
             z-index: 1;
-
         }
 
+
+        /* ========================================
+           PRE-ORDER BANNER
+           ======================================== */
+
+        .preorder-banner {
+            width: 90%;
+            max-width: 1000px;
+
+            margin: 45px auto 0;
+            padding: 28px 25px;
+
+            background-color: var(--soft-pink);
+
+            border: 3px solid var(--brown);
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow: 6px 6px 0 var(--brown);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preorder-banner::before {
+            content: "♡";
+
+            position: absolute;
+            top: 8px;
+            left: 20px;
+
+            font-size: 25px;
+        }
+
+        .preorder-banner::after {
+            content: "♡";
+
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+
+            font-size: 25px;
+        }
+
+        .preorder-banner h2 {
+            font-size: 26px;
+            font-weight: 900;
+
+            margin-bottom: 15px;
+        }
+
+        .preorder-banner p {
+            font-size: 14px;
+            font-weight: bold;
+
+            line-height: 1.7;
+
+            margin: 3px 0;
+        }
 
 
         /* ========================================
@@ -255,39 +297,28 @@
            ======================================== */
 
         .about {
-
             background-color: var(--yellow);
 
             padding: 90px 8%;
 
             text-align: center;
-
         }
 
-
         .about h2 {
-
             font-size: 48px;
-
             font-weight: 900;
 
             margin-bottom: 20px;
-
         }
 
-
         .about p {
-
             max-width: 750px;
 
             margin: auto;
 
             font-size: 17px;
-
             line-height: 1.7;
-
         }
-
 
 
         /* ========================================
@@ -295,51 +326,37 @@
            ======================================== */
 
         .menu {
-
             background-color: var(--cream);
 
             padding: 90px 7%;
-
         }
 
-
         .menu h2 {
-
             text-align: center;
 
             font-size: 45px;
-
             font-weight: 900;
 
             margin-bottom: 15px;
-
         }
 
-
         .menu-subtitle {
-
             text-align: center;
 
             margin-bottom: 45px;
 
             font-weight: bold;
-
         }
 
-
         .thumbnails {
-
             display: flex;
 
             justify-content: center;
 
             gap: 35px;
-
         }
 
-
         .thumbnail {
-
             display: block;
 
             width: 320px;
@@ -355,54 +372,35 @@
             box-shadow: 7px 7px 0 var(--brown);
 
             transition: 0.2s ease;
-
         }
-
 
         .thumbnail:hover {
-
             transform: translateY(-7px);
-
         }
 
-
         .thumbnail img {
-
             width: 100%;
-
             height: 260px;
 
             object-fit: cover;
 
             display: block;
-
         }
-
 
         .thumbnail-info {
-
             padding: 20px;
-
         }
 
-
         .thumbnail-info h3 {
-
             font-size: 25px;
 
             margin-bottom: 8px;
-
         }
-
 
         .thumbnail-info p {
-
             font-size: 14px;
-
             line-height: 1.5;
-
         }
-
 
 
         /* ========================================
@@ -410,9 +408,7 @@
            ======================================== */
 
         .customer-reviews {
-
             background-color: var(--cream);
-
             color: var(--brown);
 
             padding: 70px 7%;
@@ -420,9 +416,7 @@
             width: 100%;
 
             overflow: hidden;
-
         }
-
 
 
         /* ========================================
@@ -430,9 +424,7 @@
            ======================================== */
 
         .storage-reminder {
-
             width: 100%;
-
             max-width: 1000px;
 
             margin: 0 auto 60px;
@@ -448,38 +440,25 @@
             text-align: center;
 
             box-shadow: 4px 4px 0 var(--brown);
-
         }
-
 
         .storage-reminder .reminder-icon {
-
             font-size: 28px;
-
             margin-bottom: 6px;
-
         }
 
-
         .storage-reminder strong {
-
             display: block;
 
             font-size: 17px;
 
             margin-bottom: 6px;
-
         }
-
 
         .storage-reminder p {
-
             font-size: 14px;
-
             line-height: 1.5;
-
         }
-
 
 
         /* ========================================
@@ -487,9 +466,7 @@
            ======================================== */
 
         .rating-summary {
-
             display: flex;
-
             align-items: center;
 
             gap: 60px;
@@ -497,21 +474,14 @@
             width: 100%;
 
             margin-bottom: 65px;
-
         }
-
 
         .rating-bars {
-
             flex: 1;
-
         }
 
-
         .rating-row {
-
             display: flex;
-
             align-items: center;
 
             gap: 10px;
@@ -519,21 +489,14 @@
             margin-bottom: 14px;
 
             font-size: 14px;
-
             font-weight: bold;
-
         }
-
 
         .rating-row > span:first-child {
-
             width: 45px;
-
         }
 
-
         .star-small {
-
             width: 20px;
 
             color: var(--yellow);
@@ -541,12 +504,9 @@
             font-size: 18px;
 
             -webkit-text-stroke: 0.5px var(--brown);
-
         }
 
-
         .rating-line {
-
             flex: 1;
 
             height: 8px;
@@ -556,14 +516,10 @@
             border-radius: 10px;
 
             overflow: hidden;
-
         }
 
-
         .rating-line div {
-
             width: 0%;
-
             height: 100%;
 
             background-color: var(--yellow);
@@ -571,18 +527,13 @@
             border-radius: 10px;
 
             transition: width 0.4s ease;
-
         }
 
-
         .rating-count {
-
             width: 35px;
 
             text-align: right;
-
         }
-
 
 
         /* ========================================
@@ -590,9 +541,7 @@
            ======================================== */
 
         .overall-rating {
-
             width: 300px;
-
             min-width: 300px;
 
             padding: 25px;
@@ -602,23 +551,16 @@
             text-align: center;
 
             border-radius: 12px;
-
         }
 
-
         .average-number {
-
             font-size: 42px;
-
             font-weight: 900;
 
             margin-bottom: 8px;
-
         }
 
-
         .big-stars {
-
             color: var(--yellow);
 
             -webkit-text-stroke: 1px var(--brown);
@@ -628,20 +570,15 @@
             letter-spacing: 3px;
 
             white-space: nowrap;
-
         }
 
-
         .rating-total {
-
             margin-top: 10px;
 
             font-size: 15px;
 
             font-weight: bold;
-
         }
-
 
 
         /* ========================================
@@ -649,7 +586,6 @@
            ======================================== */
 
         .reviews-content {
-
             display: grid;
 
             grid-template-columns: 1fr 1fr;
@@ -657,21 +593,15 @@
             gap: 55px;
 
             width: 100%;
-
         }
-
 
         .recent-feedbacks h2,
         .add-review h2 {
-
             margin: 0 0 25px;
 
             font-size: 30px;
-
             font-weight: 900;
-
         }
-
 
 
         /* ========================================
@@ -679,7 +609,6 @@
            ======================================== */
 
         #reviewsList {
-
             width: 100%;
 
             max-height: 500px;
@@ -687,12 +616,9 @@
             overflow-y: auto;
 
             padding-right: 5px;
-
         }
 
-
         .review-item {
-
             display: block;
 
             width: 100%;
@@ -708,23 +634,16 @@
             margin-bottom: 18px;
 
             box-shadow: 0 2px 7px rgba(90, 54, 40, 0.05);
-
         }
 
-
         .review-item-name {
-
             font-size: 18px;
-
             font-weight: 900;
 
             margin-bottom: 7px;
-
         }
 
-
         .review-item-stars {
-
             color: var(--yellow);
 
             -webkit-text-stroke: 1px var(--brown);
@@ -734,12 +653,9 @@
             letter-spacing: 1px;
 
             margin-bottom: 10px;
-
         }
 
-
         .review-item-text {
-
             margin: 0;
 
             font-size: 14px;
@@ -747,9 +663,7 @@
             line-height: 1.6;
 
             word-wrap: break-word;
-
         }
-
 
 
         /* ========================================
@@ -757,11 +671,9 @@
            ======================================== */
 
         .review-photo {
-
             width: 100%;
 
             max-width: 300px;
-
             max-height: 260px;
 
             object-fit: cover;
@@ -779,27 +691,19 @@
             cursor: pointer;
 
             transition: 0.2s ease;
-
         }
-
 
         .review-photo:hover {
-
             transform: rotate(-1deg) scale(1.02);
-
         }
 
-
         .no-reviews {
-
             font-size: 14px;
 
             line-height: 1.6;
 
             padding: 20px 0;
-
         }
-
 
 
         /* ========================================
@@ -807,26 +711,19 @@
            ======================================== */
 
         .add-review form {
-
             width: 100%;
-
         }
 
-
         .add-review label {
-
             display: block;
 
             margin-top: 18px;
-
             margin-bottom: 8px;
 
             font-size: 14px;
 
             font-weight: bold;
-
         }
-
 
 
         /* ========================================
@@ -834,18 +731,14 @@
            ======================================== */
 
         .form-stars {
-
             display: flex;
 
             gap: 3px;
 
             margin-bottom: 5px;
-
         }
 
-
         .form-stars button {
-
             padding: 0;
 
             border: none;
@@ -861,25 +754,17 @@
             cursor: pointer;
 
             transition: 0.15s ease;
-
         }
-
 
         .form-stars button:hover {
-
             transform: scale(1.15);
-
         }
 
-
         .form-stars button.selected {
-
             color: var(--yellow);
 
             -webkit-text-stroke: 1px var(--brown);
-
         }
-
 
 
         /* ========================================
@@ -888,7 +773,6 @@
 
         .add-review input,
         .add-review textarea {
-
             width: 100%;
 
             box-sizing: border-box;
@@ -908,26 +792,18 @@
             font-size: 14px;
 
             outline: none;
-
         }
 
-
         .add-review textarea {
-
             min-height: 120px;
 
             resize: vertical;
-
         }
-
 
         .add-review input:focus,
         .add-review textarea:focus {
-
             border: 2px solid var(--yellow);
-
         }
-
 
 
         /* ========================================
@@ -935,14 +811,10 @@
            ======================================== */
 
         .photo-upload-wrapper {
-
             margin-top: 10px;
-
         }
 
-
         .photo-upload {
-
             width: 100%;
 
             min-height: 125px;
@@ -968,38 +840,27 @@
             cursor: pointer;
 
             transition: 0.25s ease;
-
         }
 
-
         .photo-upload:hover {
-
             background-color: var(--soft-yellow);
 
             transform: translateY(-2px);
 
             border-style: solid;
-
         }
-
 
         .photo-upload:active {
-
             transform: scale(0.98);
-
         }
 
-
         .upload-icon {
-
             width: 48px;
-
             height: 48px;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             background-color: white;
@@ -1011,36 +872,25 @@
             margin-bottom: 8px;
 
             box-shadow: 2px 2px 0 var(--brown);
-
         }
 
-
         .upload-title {
-
             font-size: 14px;
 
             font-weight: 900;
 
             margin-bottom: 4px;
-
         }
 
-
         .upload-subtitle {
-
             font-size: 12px;
 
             color: var(--light-brown);
-
         }
-
 
         #reviewPhoto {
-
             display: none;
-
         }
-
 
 
         /* ========================================
@@ -1048,7 +898,6 @@
            ======================================== */
 
         .photo-preview-wrapper {
-
             display: none;
 
             position: relative;
@@ -1064,19 +913,13 @@
             border-radius: 15px;
 
             border: 2px solid #F3E9C5;
-
         }
-
 
         .photo-preview-wrapper.show {
-
             display: block;
-
         }
 
-
         .photo-preview {
-
             width: 100%;
 
             max-height: 220px;
@@ -1088,20 +931,15 @@
             display: block;
 
             background-color: white;
-
         }
 
-
         .remove-photo {
-
             width: 32px;
-
             height: 32px;
 
             position: absolute;
 
             top: -8px;
-
             right: -8px;
 
             border: 2px solid var(--brown);
@@ -1121,29 +959,20 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
-
         }
-
 
         .remove-photo:hover {
-
             background-color: var(--yellow);
-
         }
 
-
         .photo-note {
-
             margin-top: 7px;
 
             font-size: 11px;
 
             color: var(--light-brown);
-
         }
-
 
 
         /* ========================================
@@ -1151,7 +980,6 @@
            ======================================== */
 
         .review-submit {
-
             width: 100%;
 
             margin-top: 25px;
@@ -1175,19 +1003,13 @@
             cursor: pointer;
 
             transition: 0.2s ease;
-
         }
-
 
         .review-submit:hover {
-
             transform: translateY(-2px);
-
         }
 
-
         .review-message {
-
             min-height: 20px;
 
             margin-top: 12px;
@@ -1195,9 +1017,91 @@
             font-size: 14px;
 
             font-weight: bold;
-
         }
 
+
+        /* ========================================
+           CUSTOMER SERVICE
+           ======================================== */
+
+        .customer-service {
+            width: 90%;
+            max-width: 900px;
+
+            margin: 55px auto 0;
+
+            padding: 32px 25px;
+
+            background-color: white;
+
+            border: 3px solid var(--brown);
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow: 6px 6px 0 var(--brown);
+        }
+
+        .customer-service h2 {
+            font-size: 28px;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+        }
+
+        .customer-service > p {
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-cards {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            min-width: 230px;
+
+            padding: 15px 20px;
+
+            background-color: var(--soft-yellow);
+
+            border: 2px dashed var(--brown);
+
+            border-radius: 18px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            transition: 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px) rotate(-1deg);
+        }
+
+        .contact-icon {
+            font-size: 25px;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-card strong {
+            display: block;
+
+            font-size: 14px;
+        }
 
 
         /* ========================================
@@ -1205,11 +1109,9 @@
            ======================================== */
 
         .mimi-container {
-
             position: fixed;
 
             right: 20px;
-
             bottom: 20px;
 
             z-index: 2000;
@@ -1219,12 +1121,9 @@
             flex-direction: column;
 
             align-items: flex-end;
-
         }
 
-
         .mimi-chat {
-
             background-color: white;
 
             color: var(--brown);
@@ -1244,12 +1143,9 @@
             font-weight: bold;
 
             box-shadow: 4px 4px 0 var(--brown);
-
         }
 
-
         .mimi-button {
-
             border: none;
 
             background: transparent;
@@ -1257,20 +1153,14 @@
             cursor: pointer;
 
             padding: 0;
-
         }
 
-
         .mimi-button img {
-
             width: 90px;
-
             height: 90px;
 
             object-fit: contain;
-
         }
-
 
 
         /* ========================================
@@ -1278,7 +1168,6 @@
            ======================================== */
 
         footer {
-
             background-color: var(--brown);
 
             color: var(--cream);
@@ -1286,16 +1175,11 @@
             text-align: center;
 
             padding: 45px 20px;
-
         }
-
 
         footer p {
-
             margin: 7px 0;
-
         }
-
 
 
         /* ========================================
@@ -1305,40 +1189,36 @@
         @media (max-width: 700px) {
 
             nav {
-
                 height: 60px;
 
-                padding: 0 5%;
-
+                padding: 0 4%;
             }
-
 
             nav .nav-logo {
-
                 font-size: 20px;
-
             }
-
 
             nav ul {
-
-                gap: 13px;
-
+                gap: 8px;
             }
-
 
             nav ul li a {
-
-                font-size: 11px;
-
+                font-size: 10px;
             }
 
+            .language-switcher {
+                box-shadow: 2px 2px 0 var(--brown);
+            }
+
+            .language-switcher button {
+                padding: 5px 6px;
+                font-size: 9px;
+            }
 
 
             /* HERO */
 
             .hero {
-
                 min-height: auto;
 
                 padding: 110px 7% 70px;
@@ -1348,324 +1228,248 @@
                 text-align: center;
 
                 gap: 30px;
-
             }
-
 
             .hero-text {
-
                 width: 100%;
-
             }
-
 
             .hero-text h1 {
-
                 font-size: clamp(48px, 14vw, 70px);
-
             }
-
 
             .hero-text p {
-
                 font-size: 16px;
-
             }
 
-
             .hero-logo {
-
                 width: 190px;
 
                 max-width: 190px;
-
             }
 
+
+            /* PRE-ORDER */
+
+            .preorder-banner {
+                width: 88%;
+
+                padding: 24px 15px;
+
+                box-shadow: 4px 4px 0 var(--brown);
+            }
+
+            .preorder-banner h2 {
+                font-size: 21px;
+            }
+
+            .preorder-banner p {
+                font-size: 12px;
+            }
 
 
             /* ABOUT */
 
             .about {
-
                 padding: 70px 7%;
-
             }
-
 
             .about h2 {
-
                 font-size: 35px;
-
             }
-
 
             .about p {
-
                 font-size: 15px;
-
             }
-
 
 
             /* MENU */
 
             .menu {
-
                 padding: 70px 6%;
-
             }
-
 
             .menu h2 {
-
                 font-size: 35px;
-
             }
 
-
             .thumbnails {
-
                 flex-direction: column;
 
                 align-items: center;
 
                 gap: 30px;
-
             }
 
-
             .thumbnail {
-
                 width: 100%;
 
                 max-width: 350px;
-
             }
-
 
 
             /* REVIEWS */
 
             .customer-reviews {
-
                 padding: 55px 6%;
-
             }
 
-
             .storage-reminder {
-
                 padding: 18px 15px;
 
                 margin-bottom: 45px;
 
                 box-shadow: 3px 3px 0 var(--brown);
-
             }
-
 
             .storage-reminder strong {
-
                 font-size: 15px;
-
             }
-
 
             .storage-reminder p {
-
                 font-size: 13px;
-
             }
 
-
             .rating-summary {
-
                 flex-direction: column;
 
                 gap: 30px;
 
                 margin-bottom: 50px;
-
             }
-
 
             .rating-bars {
-
                 width: 100%;
-
             }
 
-
             .rating-row {
-
                 gap: 7px;
 
                 font-size: 12px;
-
             }
-
 
             .rating-row > span:first-child {
-
                 width: 38px;
-
             }
-
 
             .rating-line {
-
                 height: 7px;
-
             }
 
-
             .overall-rating {
-
                 width: 100%;
 
                 min-width: 0;
-
             }
 
-
             .reviews-content {
-
                 grid-template-columns: 1fr;
 
                 gap: 50px;
-
             }
-
 
             .recent-feedbacks h2,
             .add-review h2 {
-
                 font-size: 25px;
-
             }
-
 
             .review-item {
-
                 padding: 17px;
-
             }
-
 
             .review-item-name {
-
                 font-size: 17px;
-
             }
-
 
             .review-item-text {
-
                 font-size: 13px;
-
             }
 
-
             .review-photo {
-
                 max-width: 100%;
 
                 max-height: 240px;
-
             }
-
 
             .big-stars {
-
                 font-size: 24px;
-
             }
-
 
 
             /* PHOTO UPLOAD */
 
             .photo-upload {
-
                 min-height: 115px;
 
                 padding: 16px;
-
             }
 
-
             .upload-icon {
-
                 width: 43px;
-
                 height: 43px;
 
                 font-size: 22px;
-
             }
-
 
             .upload-title {
-
                 font-size: 13px;
-
             }
-
 
             .upload-subtitle {
-
                 font-size: 11px;
-
             }
-
 
             .photo-preview {
-
                 max-height: 200px;
-
             }
 
-
             .review-submit {
-
                 min-height: 48px;
 
                 font-size: 14px;
-
             }
 
+
+            /* CUSTOMER SERVICE */
+
+            .customer-service {
+                width: 88%;
+
+                padding: 27px 15px;
+
+                box-shadow: 4px 4px 0 var(--brown);
+            }
+
+            .customer-service h2 {
+                font-size: 23px;
+            }
+
+            .contact-card {
+                width: 100%;
+            }
 
 
             /* MIMI */
 
             .mimi-container {
-
                 right: 10px;
 
                 bottom: 10px;
-
             }
 
-
             .mimi-button img {
-
                 width: 75px;
 
                 height: 75px;
-
             }
 
-
             .mimi-chat {
-
                 max-width: 190px;
 
                 font-size: 12px;
-
             }
 
         }
-
 
 
         /* ========================================
@@ -1675,44 +1479,32 @@
         @media (max-width: 400px) {
 
             nav ul {
-
-                gap: 8px;
-
+                gap: 5px;
             }
-
 
             nav ul li a {
-
-                font-size: 9px;
-
+                font-size: 8px;
             }
-
 
             nav .nav-logo {
-
                 font-size: 18px;
-
             }
 
+            .language-switcher button {
+                padding: 4px 5px;
+                font-size: 8px;
+            }
 
             .hero-text h1 {
-
                 font-size: 46px;
-
             }
-
 
             .rating-row {
-
                 font-size: 11px;
-
             }
 
-
             .rating-row > span:first-child {
-
                 width: 32px;
-
             }
 
         }
@@ -1742,27 +1534,67 @@
         <ul>
 
             <li>
-                <a href="#home">
+                <a
+                    href="#home"
+                    data-en="HOME"
+                    data-id="BERANDA"
+                >
                     HOME
                 </a>
             </li>
 
             <li>
-                <a href="#about">
+                <a
+                    href="#about"
+                    data-en="ABOUT"
+                    data-id="TENTANG"
+                >
                     ABOUT
                 </a>
             </li>
 
             <li>
-                <a href="#menu">
+                <a
+                    href="#menu"
+                    data-en="MENU"
+                    data-id="MENU"
+                >
                     MENU
                 </a>
             </li>
 
             <li>
-                <a href="#contact">
+                <a
+                    href="#contact"
+                    data-en="CONTACT"
+                    data-id="KONTAK"
+                >
                     CONTACT
                 </a>
+            </li>
+
+            <li>
+
+                <div class="language-switcher">
+
+                    <button
+                        type="button"
+                        id="langEN"
+                        onclick="setLanguage('en')"
+                    >
+                        🇬🇧 EN
+                    </button>
+
+                    <button
+                        type="button"
+                        id="langID"
+                        onclick="setLanguage('id')"
+                    >
+                        🇮🇩 ID
+                    </button>
+
+                </div>
+
             </li>
 
         </ul>
@@ -1786,15 +1618,18 @@
                 CHEESECAKE
             </h1>
 
-
-            <p>
+            <p
+                data-en="One scoop, instant yum!"
+                data-id="Satu scoop, langsung yum!"
+            >
                 One scoop, instant yum!
             </p>
-
 
             <a
                 href="#menu"
                 class="order-button"
+                data-en="ORDER NOW"
+                data-id="PESAN SEKARANG"
             >
                 ORDER NOW
             </a>
@@ -1813,6 +1648,44 @@
 
 
     <!-- ========================================
+         WAVE 1 PRE-ORDER
+         ======================================== -->
+
+    <section class="preorder-banner">
+
+        <h2
+            data-en="🎀 Wave 1 🎀"
+            data-id="🎀 Gelombang 1 🎀"
+        >
+            🎀 Wave 1 🎀
+        </h2>
+
+        <p
+            data-en="🗓️ Pre-Order Period: October 5–11, 2026"
+            data-id="🗓️ Jadwal Pre-Order: 5–11 Oktober 2026"
+        >
+            🗓️ Pre-Order Period: October 5–11, 2026
+        </p>
+
+        <p
+            data-en="📦 Pick-up / Delivery Period: October 12–16, 2026"
+            data-id="📦 Jadwal Ambil/Kirim Produk: 12–16 Oktober 2026"
+        >
+            📦 Pick-up / Delivery Period: October 12–16, 2026
+        </p>
+
+        <p
+            data-en="✨ Limited slots available, don't miss out, Sweethearts! 💖"
+            data-id="✨ Slot terbatas, jangan sampai ketinggalan ya, Sweethearts! 💖"
+        >
+            ✨ Limited slots available, don't miss out, Sweethearts! 💖
+        </p>
+
+    </section>
+
+
+
+    <!-- ========================================
          ABOUT
          ======================================== -->
 
@@ -1821,12 +1694,18 @@
         id="about"
     >
 
-        <h2>
+        <h2
+            data-en="SWEET. CREAMY. YUMMY."
+            data-id="MANIS. LEMBUT. YUMMY."
+        >
             SWEET. CREAMY. YUMMY.
         </h2>
 
 
-        <p>
+        <p
+            data-en="Welcome to Yogumi! We make delicious, creamy cheesecake with flavors made to satisfy your sweet cravings. Choose your favorite flavor and enjoy your little piece of happiness."
+            data-id="Selamat datang di Yogumi! Kami membuat cheesecake yang lezat dan creamy dengan rasa yang siap memuaskan keinginanmu akan makanan manis. Pilih rasa favoritmu dan nikmati sedikit kebahagiaanmu."
+        >
             Welcome to Yogumi! We make delicious,
             creamy cheesecake with flavors made
             to satisfy your sweet cravings.
@@ -1847,12 +1726,19 @@
         id="menu"
     >
 
-        <h2>
+        <h2
+            data-en="OUR CHEESECAKES"
+            data-id="CHEESECAKE KAMI"
+        >
             OUR CHEESECAKES
         </h2>
 
 
-        <p class="menu-subtitle">
+        <p
+            class="menu-subtitle"
+            data-en="Pick your favorite!"
+            data-id="Pilih favoritmu!"
+        >
             Pick your favorite!
         </p>
 
@@ -1880,7 +1766,10 @@
                     </h3>
 
 
-                    <p>
+                    <p
+                        data-en="Creamy cheesecake with delicious Biscoff goodness."
+                        data-id="Cheesecake creamy dengan kelezatan Biscoff yang nikmat."
+                    >
                         Creamy cheesecake with
                         delicious Biscoff goodness.
                     </p>
@@ -1911,7 +1800,10 @@
                     </h3>
 
 
-                    <p>
+                    <p
+                        data-en="A creamy cheesecake packed with Oreo goodness."
+                        data-id="Cheesecake creamy dengan rasa Oreo yang lezat."
+                    >
                         A creamy cheesecake packed
                         with Oreo goodness.
                     </p>
@@ -1944,11 +1836,17 @@
                 🧊🍰
             </div>
 
-            <strong>
+            <strong
+                data-en="Friendly Reminder!"
+                data-id="Pengingat Manis!"
+            >
                 Friendly Reminder!
             </strong>
 
-            <p>
+            <p
+                data-en="Please keep your cake stored in a cool temperature! It is best enjoyed when served cold."
+                data-id="Simpan cheesecake-mu di tempat yang sejuk ya! Cheesecake paling nikmat disajikan dalam keadaan dingin."
+            >
                 Please keep your cake stored in a cool temperature!
                 It is best enjoyed when served cold.
             </p>
@@ -1966,10 +1864,12 @@
 
             <div class="rating-bars">
 
-
                 <div class="rating-row">
 
-                    <span>
+                    <span
+                        data-en="FIVE"
+                        data-id="LIMA"
+                    >
                         FIVE
                     </span>
 
@@ -1993,7 +1893,10 @@
 
                 <div class="rating-row">
 
-                    <span>
+                    <span
+                        data-en="FOUR"
+                        data-id="EMPAT"
+                    >
                         FOUR
                     </span>
 
@@ -2017,7 +1920,10 @@
 
                 <div class="rating-row">
 
-                    <span>
+                    <span
+                        data-en="THREE"
+                        data-id="TIGA"
+                    >
                         THREE
                     </span>
 
@@ -2041,7 +1947,10 @@
 
                 <div class="rating-row">
 
-                    <span>
+                    <span
+                        data-en="TWO"
+                        data-id="DUA"
+                    >
                         TWO
                     </span>
 
@@ -2065,7 +1974,10 @@
 
                 <div class="rating-row">
 
-                    <span>
+                    <span
+                        data-en="ONE"
+                        data-id="SATU"
+                    >
                         ONE
                     </span>
 
@@ -2101,11 +2013,9 @@
                     0.0
                 </div>
 
-
                 <div class="big-stars">
                     ★★★★★
                 </div>
-
 
                 <div class="rating-total">
 
@@ -2113,7 +2023,12 @@
                         0
                     </span>
 
-                    Ratings
+                    <span
+                        data-en="Ratings"
+                        data-id="Penilaian"
+                    >
+                        Ratings
+                    </span>
 
                 </div>
 
@@ -2132,14 +2047,21 @@
 
             <div class="recent-feedbacks">
 
-                <h2>
+                <h2
+                    data-en="Recent Feedbacks"
+                    data-id="Ulasan Terbaru"
+                >
                     Recent Feedbacks
                 </h2>
 
 
                 <div id="reviewsList">
 
-                    <p class="no-reviews">
+                    <p
+                        class="no-reviews"
+                        data-en="No reviews yet. Be the first to review Yogumi!"
+                        data-id="Belum ada ulasan. Jadilah yang pertama memberikan ulasan untuk Yogumi!"
+                    >
                         No reviews yet.
                         Be the first to review Yogumi!
                     </p>
@@ -2154,7 +2076,10 @@
 
             <div class="add-review">
 
-                <h2>
+                <h2
+                    data-en="Add a Review"
+                    data-id="Tambah Ulasan"
+                >
                     Add a Review
                 </h2>
 
@@ -2164,7 +2089,10 @@
 
                     <!-- RATING -->
 
-                    <label>
+                    <label
+                        data-en="Add Your Rating *"
+                        data-id="Berikan Penilaianmu *"
+                    >
                         Add Your Rating *
                     </label>
 
@@ -2215,7 +2143,11 @@
 
                     <!-- NAME -->
 
-                    <label for="customerName">
+                    <label
+                        for="customerName"
+                        data-en="Name *"
+                        data-id="Nama *"
+                    >
                         Name *
                     </label>
 
@@ -2224,6 +2156,8 @@
                         type="text"
                         id="customerName"
                         placeholder="Your name"
+                        data-placeholder-en="Your name"
+                        data-placeholder-id="Namamu"
                         maxlength="50"
                         required
                     >
@@ -2232,7 +2166,11 @@
 
                     <!-- REVIEW -->
 
-                    <label for="customerReview">
+                    <label
+                        for="customerReview"
+                        data-en="Write Your Review *"
+                        data-id="Tulis Ulasanmu *"
+                    >
                         Write Your Review *
                     </label>
 
@@ -2240,6 +2178,8 @@
                     <textarea
                         id="customerReview"
                         placeholder="Write your review..."
+                        data-placeholder-en="Write your review..."
+                        data-placeholder-id="Tulis ulasanmu..."
                         maxlength="500"
                         required
                     ></textarea>
@@ -2248,7 +2188,10 @@
 
                     <!-- PHOTO -->
 
-                    <label>
+                    <label
+                        data-en="Add a Photo ♡"
+                        data-id="Tambahkan Foto ♡"
+                    >
                         Add a Photo ♡
                     </label>
 
@@ -2265,12 +2208,20 @@
                             </div>
 
 
-                            <div class="upload-title">
+                            <div
+                                class="upload-title"
+                                data-en="Show us your cheesecake!"
+                                data-id="Tunjukkan cheesecake-mu!"
+                            >
                                 Show us your cheesecake!
                             </div>
 
 
-                            <div class="upload-subtitle">
+                            <div
+                                class="upload-subtitle"
+                                data-en="Tap to add a JPG or PNG photo ♡"
+                                data-id="Tap untuk menambahkan foto JPG atau PNG ♡"
+                            >
                                 Tap to add a JPG or PNG photo ♡
                             </div>
 
@@ -2283,8 +2234,6 @@
                             accept="image/jpeg,image/png"
                         >
 
-
-                        <!-- PHOTO PREVIEW -->
 
                         <div
                             class="photo-preview-wrapper"
@@ -2310,7 +2259,11 @@
                         </div>
 
 
-                        <p class="photo-note">
+                        <p
+                            class="photo-note"
+                            data-en="JPG or PNG only • Maximum 2 MB"
+                            data-id="Hanya JPG atau PNG • Maksimal 2 MB"
+                        >
                             JPG or PNG only • Maximum 2 MB
                         </p>
 
@@ -2323,6 +2276,8 @@
                     <button
                         type="submit"
                         class="review-submit"
+                        data-en="Submit Review ♡"
+                        data-id="Kirim Ulasan ♡"
                     >
                         Submit Review ♡
                     </button>
@@ -2339,6 +2294,59 @@
 
         </div>
 
+
+        <!-- ========================================
+             CUSTOMER SERVICE
+             ======================================== -->
+
+        <section class="customer-service">
+
+            <h2
+                data-en="💌 Need Help, Sweetie? 💌"
+                data-id="💌 Butuh Bantuan, Sweetie? 💌"
+            >
+                💌 Need Help, Sweetie? 💌
+            </h2>
+
+            <p
+                data-en="Contact us if you have any questions regarding your order! We are happy to help 💖"
+                data-id="Hubungi kami jika ada pertanyaan seputar pesananmu! Kami siap membantu 💖"
+            >
+                Contact us if you have any questions regarding your order!
+                We are happy to help 💖
+            </p>
+
+            <div class="contact-cards">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        📧
+                    </div>
+
+                    <strong>Email</strong>
+
+                    hello@yourbakeryname.com
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        💬
+                    </div>
+
+                    <strong>WhatsApp / Phone</strong>
+
+                    +62 812-XXXX-XXXX
+
+                </div>
+
+            </div>
+
+        </section>
+
     </section>
 
 
@@ -2348,7 +2356,6 @@
          ======================================== -->
 
     <div class="mimi-container">
-
 
         <div
             class="mimi-chat"
@@ -2390,7 +2397,10 @@
         </p>
 
 
-        <p>
+        <p
+            data-en="Made with love and cheesecake"
+            data-id="Dibuat dengan cinta dan cheesecake"
+        >
             Made with love and cheesecake
         </p>
 
@@ -2398,7 +2408,10 @@
         <br>
 
 
-        <p>
+        <p
+            data-en="© 2026 Yogumi. All rights reserved."
+            data-id="© 2026 Yogumi. Hak cipta dilindungi."
+        >
             © 2026 Yogumi. All rights reserved.
         </p>
 
@@ -2411,6 +2424,99 @@
          ======================================== -->
 
     <script>
+
+
+        /* ========================================
+           LANGUAGE SWITCHER
+           ======================================== */
+
+        let currentLanguage =
+            localStorage.getItem("yogumiLanguage") || "en";
+
+
+        function setLanguage(language) {
+
+            currentLanguage = language;
+
+
+            /* Translate all elements */
+
+            document
+                .querySelectorAll("[data-en][data-id]")
+                .forEach(function(element) {
+
+                    element.textContent =
+                        element.getAttribute(
+                            "data-" + language
+                        );
+
+                });
+
+
+            /* Translate placeholders */
+
+            document
+                .querySelectorAll(
+                    "[data-placeholder-en][data-placeholder-id]"
+                )
+                .forEach(function(element) {
+
+                    element.placeholder =
+                        element.getAttribute(
+                            "data-placeholder-" + language
+                        );
+
+                });
+
+
+            /* Update page language */
+
+            document.documentElement.lang =
+                language;
+
+
+            /* Save language */
+
+            localStorage.setItem(
+                "yogumiLanguage",
+                language
+            );
+
+
+            /* Active button */
+
+            document
+                .getElementById("langEN")
+                .classList.toggle(
+                    "active",
+                    language === "en"
+                );
+
+
+            document
+                .getElementById("langID")
+                .classList.toggle(
+                    "active",
+                    language === "id"
+                );
+
+
+            /* Update Mimi if chat is currently open */
+
+            if (mimiOpen) {
+
+                mimiChat.textContent =
+                    mimiDialogues[currentLanguage][
+                        Math.floor(
+                            Math.random() *
+                            mimiDialogues[currentLanguage].length
+                        )
+                    ];
+
+            }
+
+        }
+
 
 
         /* ========================================
@@ -2435,25 +2541,49 @@
             );
 
 
-        const mimiDialogues = [
+        const mimiDialogues = {
 
-            "Pssttt... wants some cheesecake?",
+            en: [
 
-            "Meow! Pick your favorite!",
+                "Pssttt... wants some cheesecake? 🐾",
 
-            "Biscoff is calling you...",
+                "Meow! Pick your favorite! 🐱",
 
-            "Oreo cheesecake sounds yummy!",
+                "Biscoff is calling you... 🍪",
 
-            "Don't forget to treat yourself!",
+                "Oreo cheesecake sounds yummy! 🤎",
 
-            "Mimi approves of cheesecake!",
+                "Don't forget to treat yourself! 💕",
 
-            "One cheesecake, please!",
+                "Mimi approves of cheesecake! 🐾",
 
-            "Psst... I smell cheesecake!"
+                "One cheesecake, please! 🍰",
 
-        ];
+                "Psst... I smell cheesecake! 👀"
+
+            ],
+
+            id: [
+
+                "Pssttt... mau cheesecake? 🐾",
+
+                "Meow! Pilih favoritmu! 🐱",
+
+                "Biscoff memanggilmu... 🍪",
+
+                "Cheesecake Oreo kedengarannya enak! 🤎",
+
+                "Jangan lupa manjakan dirimu! 💕",
+
+                "Mimi menyetujui cheesecake ini! 🐾",
+
+                "Satu cheesecake, please! 🍰",
+
+                "Psst... Mimi mencium bau cheesecake! 👀"
+
+            ]
+
+        };
 
 
         let mimiOpen = false;
@@ -2474,10 +2604,10 @@
 
 
                     mimiChat.textContent =
-                        mimiDialogues[
+                        mimiDialogues[currentLanguage][
                             Math.floor(
                                 Math.random() *
-                                mimiDialogues.length
+                                mimiDialogues[currentLanguage].length
                             )
                         ];
 
@@ -2641,7 +2771,6 @@
             );
 
 
-
         reviewPhoto.addEventListener(
             "change",
             function() {
@@ -2651,13 +2780,9 @@
 
 
                 if (!file) {
-
                     return;
-
                 }
 
-
-                /* Check file type */
 
                 const allowedTypes = [
                     "image/jpeg",
@@ -2672,7 +2797,9 @@
                 ) {
 
                     alert(
-                        "Please choose a JPG or PNG image."
+                        currentLanguage === "id"
+                            ? "Silakan pilih gambar JPG atau PNG."
+                            : "Please choose a JPG or PNG image."
                     );
 
                     this.value = "";
@@ -2681,9 +2808,6 @@
 
                 }
 
-
-
-                /* Check file size */
 
                 const maxSize =
                     2 * 1024 * 1024;
@@ -2695,7 +2819,9 @@
                 ) {
 
                     alert(
-                        "Please choose a photo smaller than 2 MB."
+                        currentLanguage === "id"
+                            ? "Silakan pilih foto yang ukurannya kurang dari 2 MB."
+                            : "Please choose a photo smaller than 2 MB."
                     );
 
                     this.value = "";
@@ -2704,9 +2830,6 @@
 
                 }
 
-
-
-                /* Read photo */
 
                 const reader =
                     new FileReader();
@@ -2782,8 +2905,11 @@
 
                     <p class="no-reviews">
 
-                        No reviews yet.
-                        Be the first to review Yogumi!
+                        ${
+                            currentLanguage === "id"
+                                ? "Belum ada ulasan. Jadilah yang pertama memberikan ulasan untuk Yogumi!"
+                                : "No reviews yet. Be the first to review Yogumi!"
+                        }
 
                     </p>
 
@@ -2800,16 +2926,11 @@
             reviewsList.innerHTML = "";
 
 
-            /*
-             * Newest reviews appear first.
-             */
-
             reviews
                 .slice()
                 .reverse()
                 .forEach(
                     function(review) {
-
 
                         const reviewItem =
                             document.createElement(
@@ -2820,9 +2941,6 @@
                         reviewItem.className =
                             "review-item";
 
-
-
-                        /* NAME */
 
                         const name =
                             document.createElement(
@@ -2837,9 +2955,6 @@
                         name.textContent =
                             review.name;
 
-
-
-                        /* STARS */
 
                         const stars =
                             document.createElement(
@@ -2861,9 +2976,6 @@
                             );
 
 
-
-                        /* COMMENT */
-
                         const text =
                             document.createElement(
                                 "p"
@@ -2878,9 +2990,6 @@
                             review.comment;
 
 
-
-                        /* BUILD CARD */
-
                         reviewItem.appendChild(
                             name
                         );
@@ -2894,7 +3003,6 @@
                         reviewItem.appendChild(
                             text
                         );
-
 
 
                         /* PHOTO */
@@ -2921,11 +3029,6 @@
                                 "Customer cheesecake photo";
 
 
-                            /*
-                             * Clicking the photo
-                             * opens it in a new tab.
-                             */
-
                             photo.addEventListener(
                                 "click",
                                 function() {
@@ -2951,9 +3054,6 @@
 
                         }
 
-
-
-                        /* ADD CARD */
 
                         reviewsList.appendChild(
                             reviewItem
@@ -2995,30 +3095,11 @@
                     "0.0";
 
 
-                setRatingBar(
-                    1,
-                    0
-                );
-
-                setRatingBar(
-                    2,
-                    0
-                );
-
-                setRatingBar(
-                    3,
-                    0
-                );
-
-                setRatingBar(
-                    4,
-                    0
-                );
-
-                setRatingBar(
-                    5,
-                    0
-                );
+                setRatingBar(1, 0);
+                setRatingBar(2, 0);
+                setRatingBar(3, 0);
+                setRatingBar(4, 0);
+                setRatingBar(5, 0);
 
                 return;
 
@@ -3028,13 +3109,9 @@
             const counts = {
 
                 1: 0,
-
                 2: 0,
-
                 3: 0,
-
                 4: 0,
-
                 5: 0
 
             };
@@ -3069,30 +3146,11 @@
                 average.toFixed(1);
 
 
-            setRatingBar(
-                1,
-                counts[1]
-            );
-
-            setRatingBar(
-                2,
-                counts[2]
-            );
-
-            setRatingBar(
-                3,
-                counts[3]
-            );
-
-            setRatingBar(
-                4,
-                counts[4]
-            );
-
-            setRatingBar(
-                5,
-                counts[5]
-            );
+            setRatingBar(1, counts[1]);
+            setRatingBar(2, counts[2]);
+            setRatingBar(3, counts[3]);
+            setRatingBar(4, counts[4]);
+            setRatingBar(5, counts[5]);
 
         }
 
@@ -3110,13 +3168,9 @@
             const names = {
 
                 1: "one",
-
                 2: "two",
-
                 3: "three",
-
                 4: "four",
-
                 5: "five"
 
             };
@@ -3211,7 +3265,9 @@
                     ) {
 
                         message.textContent =
-                            "Please choose a rating.";
+                            currentLanguage === "id"
+                                ? "Silakan pilih penilaian terlebih dahulu."
+                                : "Please choose a rating.";
 
                         return;
 
@@ -3226,7 +3282,9 @@
                     ) {
 
                         message.textContent =
-                            "Please enter your name.";
+                            currentLanguage === "id"
+                                ? "Silakan masukkan namamu."
+                                : "Please enter your name.";
 
                         return;
 
@@ -3241,7 +3299,9 @@
                     ) {
 
                         message.textContent =
-                            "Please write a review.";
+                            currentLanguage === "id"
+                                ? "Silakan tulis ulasanmu."
+                                : "Please write a review.";
 
                         return;
 
@@ -3268,9 +3328,6 @@
                     };
 
 
-
-                    /* ADD REVIEW */
-
                     reviews.push(
                         newReview
                     );
@@ -3290,12 +3347,6 @@
 
                     } catch (error) {
 
-                        /*
-                         * If browser storage is full,
-                         * remove the photo from this review
-                         * rather than breaking the review system.
-                         */
-
                         newReview.photo = "";
 
                         try {
@@ -3308,14 +3359,18 @@
                             );
 
                             message.textContent =
-                                "Review submitted, but the photo could not be saved because browser storage is full.";
+                                currentLanguage === "id"
+                                    ? "Ulasan terkirim, tetapi foto tidak dapat disimpan karena penyimpanan browser penuh."
+                                    : "Review submitted, but the photo could not be saved because browser storage is full.";
 
                         } catch (storageError) {
 
                             reviews.pop();
 
                             message.textContent =
-                                "Sorry, this review could not be saved. Please try again.";
+                                currentLanguage === "id"
+                                    ? "Maaf, ulasan tidak dapat disimpan. Silakan coba lagi."
+                                    : "Sorry, this review could not be saved. Please try again.";
 
                             return;
 
@@ -3379,7 +3434,9 @@
                     /* SUCCESS */
 
                     message.textContent =
-                        "Review submitted! ♡";
+                        currentLanguage === "id"
+                            ? "Ulasan berhasil dikirim! ♡"
+                            : "Review submitted! ♡";
 
 
                     setTimeout(
@@ -3402,6 +3459,15 @@
            ======================================== */
 
         displayReviews();
+
+
+        /* ========================================
+           LOAD SAVED LANGUAGE
+           ======================================== */
+
+        setLanguage(
+            currentLanguage
+        );
 
     </script>
 

@@ -1183,6 +1183,106 @@
 
 
         /* ========================================
+           CUTE REFERRAL REWARD
+           ======================================== */
+
+        .referral-section {
+            padding: 75px 7%;
+            background: var(--soft-pink);
+        }
+
+        .referral-card {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 35px;
+            background: #fffdf8;
+            border: 3px solid var(--brown);
+            border-radius: 28px;
+            box-shadow: 7px 7px 0 var(--brown);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .referral-card::before,
+        .referral-card::after {
+            content: "♡";
+            position: absolute;
+            color: var(--soft-pink);
+            -webkit-text-stroke: 1px var(--brown);
+            font-size: 34px;
+            pointer-events: none;
+        }
+
+        .referral-card::before { top: 10px; right: 18px; transform: rotate(12deg); }
+        .referral-card::after { bottom: 10px; left: 18px; transform: rotate(-12deg); }
+
+        .referral-heading { text-align: center; margin-bottom: 12px; }
+        .referral-heading h2 { font-size: clamp(27px, 4vw, 38px); margin-bottom: 10px; }
+        .referral-heading p { font-size: 14px; line-height: 1.7; max-width: 650px; margin: 0 auto; }
+
+        .referral-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .referral-panel {
+            padding: 24px;
+            border: 2px dashed var(--brown);
+            border-radius: 22px;
+            background: var(--soft-yellow);
+        }
+
+        .referral-panel h3 { font-size: 20px; margin-bottom: 10px; line-height: 1.4; }
+        .referral-panel p { font-size: 13px; line-height: 1.6; margin-bottom: 15px; }
+        .referral-panel label { display: block; font-size: 13px; font-weight: 900; margin: 12px 0 6px; }
+        .referral-panel input,
+        .referral-panel textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #d9c6a6;
+            border-radius: 12px;
+            background: white;
+            color: var(--brown);
+            font: 14px var(--main-font);
+            outline: none;
+        }
+        .referral-panel input:focus,
+        .referral-panel textarea:focus { border-color: var(--yellow); }
+
+        .referral-button {
+            display: inline-block;
+            width: 100%;
+            margin-top: 14px;
+            padding: 13px 16px;
+            border: 2px solid var(--brown);
+            border-radius: 14px;
+            background: var(--yellow);
+            color: var(--brown);
+            font: 900 14px var(--main-font);
+            cursor: pointer;
+            box-shadow: 3px 3px 0 var(--brown);
+            transition: 0.2s ease;
+        }
+        .referral-button:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--brown); }
+        .referral-code-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border: 2px solid var(--brown);
+            border-radius: 14px;
+            background: white;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+        .referral-code-box.show { display: block; }
+        .referral-code-value { font-size: 25px; font-weight: 900; letter-spacing: 2px; margin: 7px 0; }
+        .referral-note { min-height: 18px; margin-top: 10px !important; font-weight: bold; }
+        .referral-smallprint { text-align: center; margin-top: 22px; font-size: 12px; line-height: 1.6; }
+
+        /* ========================================
            MOBILE
            ======================================== */
 
@@ -1509,6 +1609,144 @@
 
         }
 
+
+
+        /* ========================================
+           SOFT CORNERS + RESPONSIVE POLISH
+           ======================================== */
+        button, input, textarea, select,
+        .order-button, .thumbnail,
+        .preorder-banner, .language-switcher, .mimi-chat,
+        .storage-reminder, .review-card, .menu-card, .product-card,
+        .customer-reviews, .referral-card, .referral-panel,
+        .referral-code-box, .referral-button {
+            border-radius: 18px;
+        }
+
+        /* Make the main order button and both cheesecake cards consistently rounded. */
+        .order-button {
+            border-radius: 22px;
+        }
+
+        .thumbnail {
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            border-radius: 0;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            section {
+                max-width: 100%;
+            }
+
+            .referral-section {
+                padding: 42px 16px;
+            }
+
+            .referral-card {
+                width: 100%;
+                max-width: 100%;
+                padding: 24px 16px;
+                border-width: 2px;
+                border-radius: 24px;
+                box-shadow: 4px 4px 0 var(--brown);
+            }
+
+            .referral-heading h2 {
+                font-size: clamp(23px, 7vw, 30px);
+                line-height: 1.25;
+                overflow-wrap: anywhere;
+            }
+
+            .referral-heading p {
+                font-size: 13px;
+                line-height: 1.65;
+            }
+
+            .referral-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 16px;
+                margin-top: 22px;
+            }
+
+            .referral-panel {
+                min-width: 0;
+                padding: 18px 14px;
+                border-radius: 18px;
+            }
+
+            .referral-panel h3 {
+                font-size: 18px;
+                overflow-wrap: anywhere;
+            }
+
+            .referral-panel input,
+            .referral-panel textarea {
+                display: block;
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .referral-button {
+                width: 100%;
+                white-space: normal;
+                line-height: 1.4;
+                padding: 13px 12px;
+                box-shadow: 2px 2px 0 var(--brown);
+            }
+
+            .referral-code-value {
+                font-size: clamp(22px, 7vw, 28px);
+                letter-spacing: 1px;
+            }
+
+            .referral-smallprint {
+                font-size: 11px;
+                line-height: 1.6;
+            }
+
+            /* Keep cards and text blocks from becoming cramped on narrow screens. */
+            .menu-container, .menu-grid, .reviews-container,
+            .review-grid, .product-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+
+            button, a, input, textarea, select {
+                max-width: 100%;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .referral-section {
+                padding: 32px 12px;
+            }
+
+            .referral-card {
+                padding: 21px 12px;
+            }
+
+            .referral-panel {
+                padding: 16px 12px;
+            }
+        }
+
     </style>
 
 </head>
@@ -1571,6 +1809,10 @@
                 >
                     CONTACT
                 </a>
+            </li>
+
+            <li>
+                <a href="#referral" data-en="REFER" data-id="REFERRAL">REFER</a>
             </li>
 
             <li>
@@ -1648,30 +1890,30 @@
 
 
     <!-- ========================================
-         WAVE 1 PRE-ORDER
+         WAVE 2 PRE-ORDER
          ======================================== -->
 
     <section class="preorder-banner">
 
         <h2
-            data-en="🎀 Wave 1 🎀"
-            data-id="🎀 Gelombang 1 🎀"
+            data-en="🎀 Grade 12 (Wave 2) 🎀"
+            data-id="🎀 Kelas 12 (Gelombang 2) 🎀"
         >
-            🎀 Wave 1 🎀
+            🎀 Grade 12 (Wave 2) 🎀
         </h2>
 
         <p
-            data-en="🗓️ Pre-Order Period: October 5–11, 2026"
-            data-id="🗓️ Jadwal Pre-Order: 5–11 Oktober 2026"
+            data-en="🗓️ Pre-Order & Promotion: November 1–7, 2026"
+            data-id="🗓️ Pre-Order dan Promosi: 1–7 November 2026"
         >
-            🗓️ Pre-Order Period: October 5–11, 2026
+            🗓️ Pre-Order & Promotion: November 1–7, 2026
         </p>
 
         <p
-            data-en="📦 Pick-up / Delivery Period: October 12–16, 2026"
-            data-id="📦 Jadwal Ambil/Kirim Produk: 12–16 Oktober 2026"
+            data-en="📦 Pick-up / Delivery: November 9–11, 2026"
+            data-id="📦 Pickup/Delivery: 9–11 November 2026"
         >
-            📦 Pick-up / Delivery Period: October 12–16, 2026
+            📦 Pick-up / Delivery: November 9–11, 2026
         </p>
 
         <p
@@ -1816,6 +2058,68 @@
 
     </section>
 
+
+
+    <!-- ========================================
+         YOGUMI REFERRAL REWARDS
+         ======================================== -->
+
+    <section class="referral-section" id="referral">
+        <div class="referral-card">
+            <div class="referral-heading">
+                <h2 data-en="🎀 Yogumi Sweetie Referral 🎀" data-id="🎀 Referral Sweetie Yogumi 🎀">🎀 Yogumi Sweetie Referral 🎀</h2>
+                <p data-en="Share Yogumi with your friends! Make a simple referral code, then ask your friend to submit their order details through WhatsApp so our team can verify it manually."
+                   data-id="Bagikan Yogumi ke teman-temanmu! Buat kode referral sederhana, lalu minta temanmu mengirim detail pesanan lewat WhatsApp agar tim kami bisa memverifikasinya secara manual.">
+                    Share Yogumi with your friends! Make a simple referral code, then ask your friend to submit their order details through WhatsApp so our team can verify it manually.
+                </p>
+            </div>
+
+            <div class="referral-grid">
+                <div class="referral-panel">
+                    <h3 data-en="💌 1. Make your referral code" data-id="💌 1. Buat kode referral-mu">💌 1. Make your referral code</h3>
+                    <p data-en="Everyone can use the same Yogumi referral code. Share it with your friends before they order!"
+                       data-id="Semua orang bisa memakai kode referral Yogumi yang sama. Bagikan kode ini ke temanmu sebelum mereka memesan!">
+                        Everyone can use the same Yogumi referral code. Share it with your friends before they order!
+                    </p>
+                    <button type="button" class="referral-button" id="makeReferralCode"
+                            data-en="Show Yogumi code ♡" data-id="Tampilkan kode Yogumi ♡">Show Yogumi code ♡</button>
+                    <div class="referral-code-box" id="referralCodeBox" aria-live="polite">
+                        <div data-en="Your Yogumi code:" data-id="Kode Yogumi-mu:">Your Yogumi code:</div>
+                        <div class="referral-code-value" id="referralCodeValue">YOGUMI</div>
+                        <button type="button" class="referral-button" id="shareReferralCode"
+                                data-en="Share code on WhatsApp ♡" data-id="Bagikan kode lewat WhatsApp ♡">Share code on WhatsApp ♡</button>
+                    </div>
+                    <p class="referral-note" id="referralCreatorMessage" aria-live="polite"></p>
+                </div>
+
+                <div class="referral-panel">
+                    <h3 data-en="🍰 2. Submit your friend's code" data-id="🍰 2. Kirim kode temanmu">🍰 2. Submit your friend's code</h3>
+                    <p data-en="After placing an order, fill this in and send it to Yogumi through WhatsApp. If needed, attach your order proof in the WhatsApp chat."
+                       data-id="Setelah memesan, isi data ini dan kirim ke Yogumi lewat WhatsApp. Jika diperlukan, lampirkan bukti pesanan di chat WhatsApp.">
+                        After placing an order, fill this in and send it to Yogumi through WhatsApp. If needed, attach your order proof in the WhatsApp chat.
+                    </p>
+                    <label for="friendName" data-en="Your name" data-id="Namamu">Your name</label>
+                    <input type="text" id="friendName" maxlength="50" autocomplete="name"
+                           placeholder="Your name" data-placeholder-en="Your name" data-placeholder-id="Namamu">
+                    <label for="friendReferralCode" data-en="Friend's referral code" data-id="Kode referral teman">Friend's referral code</label>
+                    <input type="text" id="friendReferralCode" maxlength="50"
+                           placeholder="YOGUMI" data-placeholder-en="YOGUMI" data-placeholder-id="YOGUMI">
+                    <label for="friendOrderDetails" data-en="Order details" data-id="Detail pesanan">Order details</label>
+                    <textarea id="friendOrderDetails" rows="3" maxlength="300"
+                              placeholder="Flavor, quantity, class, etc." data-placeholder-en="Flavor, quantity, class, etc." data-placeholder-id="Rasa, jumlah, kelas, dll."></textarea>
+                    <button type="button" class="referral-button" id="sendReferralProof"
+                            data-en="Send details to Yogumi ♡" data-id="Kirim detail ke Yogumi ♡">Send details to Yogumi ♡</button>
+                    <p class="referral-note" id="referralFriendMessage" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <p class="referral-smallprint"
+               data-en="Referral codes are checked manually by Yogumi. A discount is not automatic; our team will confirm eligibility and the reward with you."
+               data-id="Kode referral diperiksa secara manual oleh Yogumi. Diskon tidak otomatis; tim kami akan mengonfirmasi kelayakan dan hadiah yang berlaku.">
+                Referral codes are checked manually by Yogumi. A discount is not automatic; our team will confirm eligibility and the reward with you.
+            </p>
+        </div>
+    </section>
 
 
     <!-- ========================================
@@ -3452,6 +3756,60 @@
                 }
             );
 
+
+
+        /* ========================================
+           REFERRAL REWARD WIDGET
+           This is a manual WhatsApp workflow, not automatic tracking.
+           ======================================== */
+
+        const referralWhatsAppNumber = "6285709098909";
+        let activeReferralCode = "";
+
+        const referralCodeBox = document.getElementById("referralCodeBox");
+        const referralCodeValue = document.getElementById("referralCodeValue");
+        const referralCreatorMessage = document.getElementById("referralCreatorMessage");
+        const referralFriendMessage = document.getElementById("referralFriendMessage");
+
+        document.getElementById("makeReferralCode").addEventListener("click", function () {
+            activeReferralCode = "YOGUMI";
+            referralCodeValue.textContent = activeReferralCode;
+            referralCodeBox.classList.add("show");
+            referralCreatorMessage.textContent = currentLanguage === "id"
+                ? "Kode Yogumi siap dibagikan! ♡"
+                : "Your Yogumi code is ready to share! ♡";
+        });
+
+        document.getElementById("shareReferralCode").addEventListener("click", function () {
+            const code = activeReferralCode || referralCodeValue.textContent || "YOGUMI";
+            const message = currentLanguage === "id"
+                ? `Haii! Yuk pesan cheesecake Yogumi bareng aku 🍰 Pakai kode referral-ku: ${code}. Setelah pesan, kirim kode dan detail pesananmu ke Yogumi lewat WhatsApp ya! 💗`
+                : `Hiii! Let's order Yogumi cheesecake 🍰 Use my referral code: ${code}. After ordering, send the code and your order details to Yogumi on WhatsApp! 💗`;
+            const url = "https://wa.me/?text=" + encodeURIComponent(message);
+            window.open(url, "_blank", "noopener,noreferrer");
+        });
+
+        document.getElementById("sendReferralProof").addEventListener("click", function () {
+            const friendName = document.getElementById("friendName").value.trim();
+            const code = document.getElementById("friendReferralCode").value.trim().toUpperCase();
+            const orderDetails = document.getElementById("friendOrderDetails").value.trim();
+
+            if (!friendName || !code || !orderDetails) {
+                referralFriendMessage.textContent = currentLanguage === "id"
+                    ? "Isi nama, kode referral, dan detail pesanan dulu ya ♡"
+                    : "Please fill in your name, referral code, and order details first ♡";
+                return;
+            }
+
+            const message = currentLanguage === "id"
+                ? `Halo Yogumi! Aku ingin mengirim detail referral.\nNama pemesan: ${friendName}\nKode referral: ${code}\nDetail pesanan: ${orderDetails}\n\nAku bisa mengirim bukti pesanan di chat ini jika diperlukan. Mohon cek kode referral dan konfirmasi apakah reward berlaku. Terima kasih! ♡`
+                : `Hi Yogumi! I'd like to submit my referral details.\nCustomer name: ${friendName}\nReferral code: ${code}\nOrder details: ${orderDetails}\n\nI can send my order proof in this chat if needed. Please check the referral code and confirm whether the reward applies. Thank you! ♡`;
+
+            referralFriendMessage.textContent = currentLanguage === "id"
+                ? "WhatsApp akan terbuka dengan pesan yang sudah disiapkan ♡"
+                : "WhatsApp will open with your message ready ♡";
+            window.open("https://wa.me/" + referralWhatsAppNumber + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+        });
 
 
         /* ========================================
